@@ -8,13 +8,13 @@ interface NexaFlowLogoProps {
 }
 
 export function NexaFlowLogo({
-  size = 38,
+  size = 40,
   showWordmark = true,
   className = "",
-  textSize = "text-xl",
+  textSize = "text-xl sm:text-2xl",
 }: NexaFlowLogoProps) {
   return (
-    <div className={`flex items-center gap-2.5 select-none ${className}`}>
+    <div className={`flex items-center gap-3 select-none ${className}`}>
       {/* 3D Ribbon 'NF' Emblem */}
       <div
         style={{ width: size, height: size }}

@@ -26,7 +26,7 @@ export function Navbar() {
       <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         <div>
           <Link href="/" className="group flex shrink-0 items-center" aria-label="NexaFlow home">
-            <NexaFlowLogo size={38} textSize="text-xl" />
+            <NexaFlowLogo size={40} textSize="text-xl sm:text-2xl" />
           </Link>
         </div>
 
