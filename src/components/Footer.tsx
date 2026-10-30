@@ -15,11 +15,8 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-16">
         <div className="grid gap-10 md:grid-cols-[1.15fr_0.65fr_0.75fr_0.85fr]">
           <div className="max-w-md">
-            <Link href="/" className="group inline-flex items-center gap-3" aria-label="NexaFlow home">
-              <NexaFlowLogo size={32} />
-              <span className="text-xl font-semibold tracking-tight text-slate-950 dark:text-white">
-                NexaFlow
-              </span>
+            <Link href="/" className="group inline-flex items-center" aria-label="NexaFlow home">
+              <NexaFlowLogo size={36} textSize="text-xl" />
             </Link>
             <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600 dark:text-slate-400">
               A better website shouldn’t take a quarter, a big deposit, or a technical team. We build, launch and look after it — so you can focus on your next customer.

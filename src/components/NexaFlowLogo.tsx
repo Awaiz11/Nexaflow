@@ -1,65 +1,49 @@
+import Image from "next/image";
+
 interface NexaFlowLogoProps {
   size?: number;
+  showWordmark?: boolean;
   className?: string;
+  textSize?: string;
 }
 
-export function NexaFlowLogo({ size = 36, className = "" }: NexaFlowLogoProps) {
+export function NexaFlowLogo({
+  size = 40,
+  showWordmark = true,
+  className = "",
+  textSize = "text-[22px]",
+}: NexaFlowLogoProps) {
   return (
-    <div
-      style={{ width: size, height: size }}
-      className={`relative flex shrink-0 items-center justify-center rounded-[10px] bg-[#0E0C22] shadow-[0_2px_10px_rgba(124,58,237,0.12)] border border-white/10 transition-all duration-300 group-hover:scale-105 group-hover:border-violet-500/40 group-hover:shadow-[0_0_20px_rgba(139,92,246,0.25)] dark:bg-[#070514] dark:border-white/10 ${className}`}
-    >
-      <svg
-        viewBox="0 0 40 40"
-        width={Math.round(size * 0.72)}
-        height={Math.round(size * 0.72)}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="transition-transform duration-300"
+    <div className={`flex items-center gap-3.5 select-none ${className}`}>
+      {/* 3D Ribbon 'NF' Emblem */}
+      <div
+        style={{ width: size, height: size }}
+        className="relative flex shrink-0 items-center justify-center transition-transform duration-300 group-hover:scale-105"
       >
-        <defs>
-          <linearGradient
-            id="nexaLogoMonogram"
-            x1="10"
-            y1="10"
-            x2="30"
-            y2="30"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="#FFFFFF" />
-            <stop offset="30%" stopColor="#DDD6FE" />
-            <stop offset="70%" stopColor="#8B5CF6" />
-            <stop offset="100%" stopColor="#6366F1" />
-          </linearGradient>
-          <linearGradient
-            id="nexaLogoBar"
-            x1="22"
-            y1="19.5"
-            x2="28"
-            y2="19.5"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop offset="0%" stopColor="#A78BFA" />
-            <stop offset="100%" stopColor="#818CF8" />
-          </linearGradient>
-        </defs>
+        <Image
+          src="/icon-512.png"
+          alt="NexaFlow NF Emblem"
+          width={size * 2}
+          height={size * 2}
+          priority
+          className="h-full w-full object-contain drop-shadow-[0_2px_12px_rgba(37,99,235,0.25)]"
+        />
+      </div>
 
-        {/* NexaFlow 'N' and 'F' Unified Monogram */}
-        <path
-          d="M10.5 29.5V10.5L22.5 29.5V10.5H29.5"
-          stroke="url(#nexaLogoMonogram)"
-          strokeWidth="3.2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        {/* 'F' Horizontal Speed Stream */}
-        <path
-          d="M22.5 19.5H27.5"
-          stroke="url(#nexaLogoBar)"
-          strokeWidth="3.2"
-          strokeLinecap="round"
-        />
-      </svg>
+      {/* 'NexaFlow' Wordmark & 'WEBSITE-AS-A-SERVICE' Tagline */}
+      {showWordmark && (
+        <div className="flex flex-col justify-center">
+          <div className={`flex items-baseline font-bold tracking-tight leading-none text-[#09091B] dark:text-[#FFFFFF] ${textSize}`}>
+            <span>Nexa</span>
+            <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+              Flow
+            </span>
+          </div>
+          <span className="mt-1 font-mono text-[7px] font-bold tracking-[0.26em] text-slate-500 dark:text-slate-400 uppercase leading-none">
+            WEBSITE-AS-A-SERVICE
+          </span>
+        </div>
+      )}
     </div>
   );
 }

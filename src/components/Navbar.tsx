@@ -25,11 +25,8 @@ export function Navbar() {
     <header className="fixed top-0 left-0 right-0 w-full z-50 border-b border-violet-200/40 bg-white/75 backdrop-blur-xl dark:border-white/[0.06] dark:bg-[#05050B]/80">
       <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         <div>
-          <Link href="/" className="group flex shrink-0 items-center gap-3" aria-label="NexaFlow home">
-            <NexaFlowLogo size={36} />
-            <span className="text-2xl font-semibold tracking-tight text-[#09091B] dark:text-[#F0EFFF]">
-              NexaFlow
-            </span>
+          <Link href="/" className="group flex shrink-0 items-center" aria-label="NexaFlow home">
+            <NexaFlowLogo size={42} />
           </Link>
         </div>
 
