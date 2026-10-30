@@ -1,0 +1,117 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ─── Color Tokens ─────────────────────────────────────── */
+:root {
+  color-scheme: light;
+  --page-bg: #FAFAFF;
+  --surface: #ffffff;
+  --surface-raised: #f1f0ff;
+  --text-primary: #0A0A0A;
+  --text-body: #4a4a6a;
+  --text-muted: #7c7c9a;
+  --line: rgba(109, 40, 217, 0.12);
+  --indigo: #4f46e5;
+  --violet: #7c3aed;
+  --shadow-soft: 0 24px 70px rgba(109, 40, 217, 0.08);
+}
+
+html.dark {
+  color-scheme: dark;
+  --page-bg: #06060F;
+  --surface: #0B091B;
+  --surface-raised: #100D24;
+  --text-primary: #FFFFFF;
+  --text-body: #9494b8;
+  --text-muted: #6464a0;
+  --line: rgba(139, 92, 246, 0.18);
+  --indigo: #818cf8;
+  --violet: #a78bfa;
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.45);
+}
+
+/* ─── Base Reset ────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; }
+
+/* LIGHT MODE: Icy white base with a soft pastel purple/lavender dome at the bottom */
+body {
+  min-height: 100vh;
+  margin: 0;
+  background-color: #FAFAFF;
+  color: #0A0A0A;
+  background-image: radial-gradient(ellipse at 50% 120%, rgba(216, 180, 254, 0.45) 0%, rgba(243, 232, 255, 0.2) 40%, transparent 70%);
+  background-attachment: fixed;
+}
+
+/* DARK MODE: Deep midnight blue/black base with subtle violet accents */
+.dark body {
+  background-color: #06060F; /* Deep midnight base */
+  color: #FFFFFF;
+  background-image: 
+    radial-gradient(ellipse at 50% 0%, rgba(109, 40, 217, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 120%, rgba(124, 58, 237, 0.25) 0%, rgba(76, 29, 149, 0.1) 40%, transparent 70%);
+  background-attachment: fixed;
+}
+
+::selection { background: rgba(124, 58, 237, 0.18); color: inherit; }
+a { text-decoration: none; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+
+/* ─── View Transition API — GPU-Accelerated Theme Morph ── */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
+/* ─── Hide Next.js Dev Overlay Badges ───────────────────── */
+nextjs-portal {
+  display: none !important;
+}
+
+/* ─── Glass Surface ─────────────────────────────────────── */
+.glass-surface { backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+
+/* ─── Card Lift ─────────────────────────────────────────── */
+.card-lift { transition: transform 350ms cubic-bezier(.2,.8,.2,1), border-color 350ms ease, box-shadow 350ms ease; }
+
+/* ─── Spotlight Card ────────────────────────────────────── */
+.spotlight-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(109, 40, 217, 0.1), transparent 68%);
+  transition: opacity 400ms ease;
+}
+.dark .spotlight-card::before {
+  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(139, 92, 246, 0.12), transparent 68%);
+}
+.spotlight-card:hover::before { opacity: 1; }
+.spotlight-card > * { position: relative; z-index: 1; }
+
+/* ─── Animations ────────────────────────────────────────── */
+@keyframes status-pulse { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.1); } }
+@keyframes soft-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes flow-line { to { stroke-dashoffset: -24; } }
+
+.status-pulse { animation: status-pulse 2s ease-in-out infinite; }
+.soft-float { animation: soft-float 6s ease-in-out infinite; }
+.flow-line { stroke-dasharray: 5 7; animation: flow-line 1.2s linear infinite; }
+
+/* ─── Reduced Motion ────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
