@@ -8,13 +8,13 @@ interface NexaFlowLogoProps {
 }
 
 export function NexaFlowLogo({
-  size = 40,
+  size = 38,
   showWordmark = true,
   className = "",
-  textSize = "text-[22px]",
+  textSize = "text-xl",
 }: NexaFlowLogoProps) {
   return (
-    <div className={`flex items-center gap-3.5 select-none ${className}`}>
+    <div className={`flex items-center gap-2.5 select-none ${className}`}>
       {/* 3D Ribbon 'NF' Emblem */}
       <div
         style={{ width: size, height: size }}
@@ -26,23 +26,20 @@ export function NexaFlowLogo({
           width={size * 2}
           height={size * 2}
           priority
-          className="h-full w-full object-contain drop-shadow-[0_2px_12px_rgba(37,99,235,0.25)]"
+          className="h-full w-full object-contain drop-shadow-[0_2px_10px_rgba(37,99,235,0.25)]"
         />
       </div>
 
-      {/* 'NexaFlow' Wordmark & 'WEBSITE-AS-A-SERVICE' Tagline */}
+      {/* 'NexaFlow' Wordmark */}
       {showWordmark && (
-        <div className="flex flex-col justify-center">
-          <div className={`flex items-baseline font-bold tracking-tight leading-none text-[#09091B] dark:text-[#FFFFFF] ${textSize}`}>
-            <span>Nexa</span>
-            <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
-              Flow
-            </span>
-          </div>
-          <span className="mt-1 font-mono text-[7px] font-bold tracking-[0.26em] text-slate-500 dark:text-slate-400 uppercase leading-none">
-            WEBSITE-AS-A-SERVICE
+        <span
+          className={`flex items-baseline font-bold tracking-tight text-[#09091B] dark:text-white ${textSize}`}
+        >
+          <span>Nexa</span>
+          <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+            Flow
           </span>
-        </div>
+        </span>
       )}
     </div>
   );
