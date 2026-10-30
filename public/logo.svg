@@ -1,31 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
-  <!-- Minimalist Dark Obsidian Slate Canvas -->
-  <rect width="32" height="32" rx="8" fill="#09091B"/>
-  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
-  
-  <!-- NexaFlow 'NF' Monogram -->
-  <!-- N Left Stem, Dynamic Flow Diagonal, into F Spine and Top Bar -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" fill="none">
+  <defs>
+    <!-- Dark Obsidian Canvas Gradient -->
+    <linearGradient id="nexaBg" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E0C22"/>
+      <stop offset="100%" stop-color="#05040D"/>
+    </linearGradient>
+
+    <!-- Subtle Silicon Valley Chamfer Border Gradient -->
+    <linearGradient id="nexaBorder" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.22"/>
+      <stop offset="45%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#6366F1" stop-opacity="0.15"/>
+    </linearGradient>
+
+    <!-- Ambient Top Rim Light -->
+    <radialGradient id="nexaRim" cx="50%" cy="0%" r="70%">
+      <stop offset="0%" stop-color="#A78BFA" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- NexaFlow 'NF' Electric Monogram Gradient -->
+    <linearGradient id="nexaMonogram" x1="10" y1="10" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="28%" stop-color="#DDD6FE"/>
+      <stop offset="68%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+
+    <!-- Middle Flow Bar Gradient -->
+    <linearGradient id="nexaBar" x1="22" y1="19.5" x2="28" y2="19.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Squircle Base Tile -->
+  <rect width="40" height="40" rx="10" fill="url(#nexaBg)"/>
+  <rect width="40" height="40" rx="10" fill="url(#nexaRim)"/>
+  <rect x="0.75" y="0.75" width="38.5" height="38.5" rx="9.25" stroke="url(#nexaBorder)" stroke-width="1.5"/>
+
+  <!-- NexaFlow 'N' and 'F' Unified Monogram -->
   <path
-    d="M7.5 24.5V7.5L18.5 24.5V7.5H25.5"
-    stroke="url(#nfGrad)"
-    stroke-width="2.75"
+    d="M10.5 29.5V10.5L22.5 29.5V10.5H29.5"
+    stroke="url(#nexaMonogram)"
+    stroke-width="3.2"
     stroke-linecap="round"
     stroke-linejoin="round"
   />
-  <!-- F Middle Crossbar -->
+  <!-- 'F' Horizontal Speed Stream -->
   <path
-    d="M18.5 15.5H24"
-    stroke="url(#nfGrad)"
-    stroke-width="2.75"
+    d="M22.5 19.5H27.5"
+    stroke="url(#nexaBar)"
+    stroke-width="3.2"
     stroke-linecap="round"
   />
-
-  <defs>
-    <linearGradient id="nfGrad" x1="7.5" y1="7.5" x2="25.5" y2="24.5" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#C4B5FD"/>
-      <stop offset="50%" stop-color="#8B5CF6"/>
-      <stop offset="100%" stop-color="#6366F1"/>
-    </linearGradient>
-  </defs>
 </svg>
-
