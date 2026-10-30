@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="none">
+  <!-- Minimalist Dark Obsidian Slate Canvas -->
+  <rect width="32" height="32" rx="8" fill="#09091B"/>
+  <rect x="0.5" y="0.5" width="31" height="31" rx="7.5" stroke="#FFFFFF" stroke-opacity="0.08"/>
+  
+  <!-- NexaFlow 'NF' Monogram -->
+  <!-- N Left Stem, Dynamic Flow Diagonal, into F Spine and Top Bar -->
+  <path
+    d="M7.5 24.5V7.5L18.5 24.5V7.5H25.5"
+    stroke="url(#nfGrad)"
+    stroke-width="2.75"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <!-- F Middle Crossbar -->
+  <path
+    d="M18.5 15.5H24"
+    stroke="url(#nfGrad)"
+    stroke-width="2.75"
+    stroke-linecap="round"
+  />
+
+  <defs>
+    <linearGradient id="nfGrad" x1="7.5" y1="7.5" x2="25.5" y2="24.5" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#C4B5FD"/>
+      <stop offset="50%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#6366F1"/>
+    </linearGradient>
+  </defs>
+</svg>

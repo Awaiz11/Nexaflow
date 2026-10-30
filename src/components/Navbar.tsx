@@ -3,8 +3,9 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Hexagon, Menu, X } from "lucide-react";
+import { ArrowUpRight, Menu, X } from "lucide-react";
 import { useState } from "react";
+import { NexaFlowLogo } from "@/components/NexaFlowLogo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 
 const links = [
@@ -25,10 +26,7 @@ export function Navbar() {
       <div className="w-full max-w-[1600px] mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
         <div>
           <Link href="/" className="group flex shrink-0 items-center gap-2.5" aria-label="NexaFlow home">
-            <Hexagon
-              className="h-8 w-8 text-violet-600 fill-violet-600/15 transition-transform duration-300 group-hover:rotate-12 group-hover:scale-105 dark:text-violet-400 dark:fill-violet-400/20"
-              strokeWidth={2.2}
-            />
+            <NexaFlowLogo size={34} />
             <span className="text-2xl font-semibold tracking-tight text-[#09091B] dark:text-[#F0EFFF]">
               NexaFlow
             </span>

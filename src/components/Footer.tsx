@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowUpRight, Hexagon, Mail, MessageCircle, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, Mail, MessageCircle, ShieldCheck } from "lucide-react";
+import { NexaFlowLogo } from "@/components/NexaFlowLogo";
 
 const footerLinks = [
   { label: "Why NexaFlow", href: "/why-us" },
@@ -15,10 +16,7 @@ export function Footer() {
         <div className="grid gap-10 md:grid-cols-[1.15fr_0.65fr_0.75fr_0.85fr]">
           <div className="max-w-md">
             <Link href="/" className="group inline-flex items-center gap-2.5" aria-label="NexaFlow home">
-              <Hexagon
-                className="h-7 w-7 text-violet-600 fill-violet-600/20 transition-transform duration-300 group-hover:rotate-12 dark:text-violet-400 dark:fill-violet-400/20"
-                strokeWidth={2.2}
-              />
+              <NexaFlowLogo size={30} />
               <span className="text-xl font-semibold tracking-tight text-slate-950 dark:text-white">
                 NexaFlow
               </span>
