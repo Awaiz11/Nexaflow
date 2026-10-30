@@ -10,3 +10,4 @@ Website-as-a-Service (WaaS) agency platform for local businesses.
 - Next.js (App Router)
 - React & Tailwind CSS
 - Framer Motion & Lucide Icons
+
