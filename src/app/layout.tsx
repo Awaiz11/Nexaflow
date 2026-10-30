@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "NexaFlow",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "NexaFlow Website Preview",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "NexaFlow | Website-as-a-Service",
     description: "Zero upfront cost, $0 down. Get a custom, high-converting website managed for you.",
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 
