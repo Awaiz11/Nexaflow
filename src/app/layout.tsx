@@ -35,6 +35,14 @@ export const metadata: Metadata = {
     description: "Zero upfront cost, $0 down. Get a custom, high-converting website managed for you.",
     images: ["/og-image.jpg"],
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/icon.svg",
+  },
 };
 
 const themeInitScript = `(() => {

@@ -66,39 +66,39 @@ export function PreviewRequestForm() {
     );
   }
 
-  const fieldClass = "mt-2 w-full rounded-xl border border-violet-200/60 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 dark:border-white/10 dark:bg-[#070514] dark:text-white dark:placeholder:text-slate-500 dark:focus:border-violet-400/70 dark:focus:ring-violet-400/10";
+  const fieldClass = "mt-2 block w-full max-w-full box-border min-w-0 rounded-xl border border-violet-200/60 bg-white px-4 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 dark:border-white/10 dark:bg-[#070514] dark:text-white dark:placeholder:text-slate-500 dark:focus:border-violet-400/70 dark:focus:ring-violet-400/10";
   const labelClass = "text-xs font-semibold text-slate-700 dark:text-slate-300";
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-[28px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl p-6 sm:p-8 dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)]">
+    <form onSubmit={handleSubmit} className="w-full max-w-full box-border min-w-0 overflow-hidden rounded-[28px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl p-5 sm:p-8 dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)]">
       <div className="mb-7 flex items-start justify-between gap-4">
         <div><p className="text-[10px] font-bold uppercase tracking-[0.2em] text-violet-600 dark:text-violet-300">The first look is on us</p><h2 className="mt-2 text-2xl font-semibold tracking-[-0.045em] text-slate-950 dark:text-white">Tell us a little about you.</h2></div>
         <span className="hidden rounded-full bg-violet-50 px-3 py-1.5 text-[10px] font-semibold text-violet-700 sm:inline-flex dark:bg-white/[0.05] dark:text-violet-300">~ 60 sec</span>
       </div>
 
-      <div className="space-y-5">
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
+      <div className="w-full max-w-full box-border min-w-0 space-y-5">
+        <div className="grid gap-4 sm:grid-cols-2 w-full max-w-full box-border min-w-0">
+          <div className="w-full max-w-full box-border min-w-0">
             <label className={labelClass} htmlFor="userName">Your name <span className="text-rose-500">*</span></label>
             <input className={fieldClass} id="userName" name="userName" placeholder="e.g. Sarah" autoComplete="given-name" required minLength={2} maxLength={80} />
           </div>
-          <div>
+          <div className="w-full max-w-full box-border min-w-0">
             <label className={labelClass} htmlFor="businessName">Business name <span className="text-rose-500">*</span></label>
             <input className={fieldClass} id="businessName" name="businessName" placeholder="e.g. The Good Table" autoComplete="organization" required minLength={2} maxLength={160} />
           </div>
         </div>
-        <div>
+        <div className="w-full max-w-full box-border min-w-0">
           <label className={labelClass} htmlFor="industry">What do you do? <span className="text-rose-500">*</span></label>
-          <select className={fieldClass} id="industry" name="industry" defaultValue="" required>
+          <select className={`${fieldClass} truncate cursor-pointer`} id="industry" name="industry" defaultValue="" required>
             <option value="" disabled>Select your industry</option>
             {industries.map((industry) => <option value={industry} key={industry}>{industry}</option>)}
           </select>
         </div>
-        <div>
+        <div className="w-full max-w-full box-border min-w-0">
           <label className={labelClass} htmlFor="discoveryUrl">Google Maps or Instagram link <span className="font-normal text-slate-400">(optional)</span></label>
           <input className={fieldClass} id="discoveryUrl" name="discoveryUrl" type="url" placeholder="https://maps.app.goo.gl/..." maxLength={2048} />
         </div>
-        <div>
+        <div className="w-full max-w-full box-border min-w-0">
           <label className={labelClass} htmlFor="whatsappNumber">WhatsApp number <span className="text-rose-500">*</span></label>
           <input className={fieldClass} id="whatsappNumber" name="whatsappNumber" type="tel" autoComplete="tel" placeholder="+1 555 010 2048" required minLength={7} maxLength={40} />
           <p className="mt-2 text-[10px] leading-5 text-slate-500 dark:text-slate-500">We’ll only use this to share your preview and discuss your site.</p>

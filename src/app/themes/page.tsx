@@ -277,17 +277,36 @@ export default function ThemesPage() {
 
         <motion.div layout className="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
-            {filtered.map((demo, index) => <motion.article key={demo.key} layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 14 }} transition={{ duration: 0.32, delay: index * 0.035 }} className="group overflow-hidden rounded-[27px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl hover:shadow-violet-950/[0.06] dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)] dark:hover:border-violet-400/40">
+            {filtered.map((demo, index) => <motion.article key={demo.key} layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 14 }} transition={{ duration: 0.32, delay: index * 0.035 }} className="group min-w-0 max-w-full overflow-hidden rounded-[27px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl hover:shadow-violet-950/[0.06] dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)] dark:hover:border-violet-400/40">
               <div className="relative overflow-hidden">
                 <ThemePreview demo={demo} />
                 <div className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-slate-950/75 px-2.5 py-1.5 text-[9px] font-bold text-white shadow-lg backdrop-blur-xl">
                   <Gauge size={11} className="text-violet-300" /> 99/100
                 </div>
               </div>
-              <div className="p-5 sm:p-6">
-                <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start"><div><p className="text-[9px] font-bold uppercase tracking-[.16em] text-violet-600 dark:text-violet-400">{demo.category}</p><h2 className="mt-1.5 text-xl font-semibold tracking-[-.045em] text-slate-950 dark:text-white">{demo.name || demo.title}</h2><p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{demo.descriptor || demo.description}</p></div><span className="w-fit rounded-full border border-violet-200/60 px-2.5 py-1.5 text-[9px] font-semibold text-slate-500 dark:border-violet-500/20 dark:text-slate-400">{demo.theme}</span></div>
+              <div className="p-5 sm:p-6 min-w-0 overflow-hidden">
+                <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start min-w-0">
+                  <div className="min-w-0 flex-1">
+                    <p className="text-[9px] font-bold uppercase tracking-[.16em] text-violet-600 dark:text-violet-400 truncate">{demo.category}</p>
+                    <h2 className="mt-1.5 text-xl font-semibold tracking-[-.045em] text-slate-950 dark:text-white truncate">{demo.name || demo.title}</h2>
+                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 line-clamp-1">{demo.descriptor || demo.description}</p>
+                  </div>
+                  <span className="w-fit shrink-0 rounded-full border border-violet-200/60 px-2.5 py-1.5 text-[9px] font-semibold text-slate-500 dark:border-violet-500/20 dark:text-slate-400">{demo.theme}</span>
+                </div>
                 <div className="mt-4 flex flex-wrap gap-1.5">{(demo.tags || demo.features || []).map((tag) => <span key={tag} className="inline-flex items-center gap-1 rounded-full bg-violet-50/70 px-2.5 py-1.5 text-[9px] font-medium text-slate-700 dark:bg-white/[0.05] dark:text-slate-300"><Check size={10} className="text-violet-600 dark:text-violet-400" />{tag}</span>)}</div>
-                <a href={demo.url || demo.liveLink} target="_blank" rel="noopener noreferrer" className="mt-5 flex items-center justify-between rounded-xl border border-violet-200/60 px-4 py-3 text-[11px] font-semibold text-slate-800 transition-all hover:border-violet-500/30 hover:bg-violet-50/60 hover:text-violet-700 dark:border-white/10 dark:text-slate-200 dark:hover:border-violet-400/30 dark:hover:bg-violet-400/[0.05] dark:hover:text-violet-300"><span className="inline-flex items-center gap-2">Launch live demo <ExternalLink size={13} /></span><span className="font-mono text-[9px] font-medium text-slate-400">{new URL(demo.url || demo.liveLink || "").hostname}</span></a>
+                <a
+                  href={demo.url || demo.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 flex items-center justify-between gap-3 min-w-0 max-w-full overflow-hidden rounded-xl border border-violet-200/60 px-4 py-3 text-[11px] font-semibold text-slate-800 transition-all hover:border-violet-500/30 hover:bg-violet-50/60 hover:text-violet-700 dark:border-white/10 dark:text-slate-200 dark:hover:border-violet-400/30 dark:hover:bg-violet-400/[0.05] dark:hover:text-violet-300"
+                >
+                  <span className="inline-flex shrink-0 items-center gap-2">
+                    Launch live demo <ExternalLink size={13} className="shrink-0" />
+                  </span>
+                  <span className="min-w-0 max-w-[55%] truncate overflow-hidden text-ellipsis font-mono text-[9px] font-medium text-slate-400 text-right">
+                    {new URL(demo.url || demo.liveLink || "").hostname}
+                  </span>
+                </a>
               </div>
             </motion.article>)}
           </AnimatePresence>

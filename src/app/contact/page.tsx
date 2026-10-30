@@ -44,7 +44,7 @@ export default function ContactPage() {
           </Reveal>
         </div>
 
-        <Reveal delay={0.06} y={16}><PreviewRequestForm /></Reveal>
+        <Reveal delay={0.06} y={16} className="w-full max-w-full min-w-0 box-border"><PreviewRequestForm /></Reveal>
       </section>
     </div>
   );
