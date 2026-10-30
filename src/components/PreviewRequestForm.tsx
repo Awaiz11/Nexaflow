@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowLeft, ArrowUpRight, Check, CircleCheck, MessageCircle, Send } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Check, ChevronDown, CircleCheck, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
 
 const industries = [
@@ -89,10 +89,26 @@ export function PreviewRequestForm() {
         </div>
         <div className="w-full max-w-full box-border min-w-0">
           <label className={labelClass} htmlFor="industry">What do you do? <span className="text-rose-500">*</span></label>
-          <select className={`${fieldClass} truncate cursor-pointer`} id="industry" name="industry" defaultValue="" required>
-            <option value="" disabled>Select your industry</option>
-            {industries.map((industry) => <option value={industry} key={industry}>{industry}</option>)}
-          </select>
+          <div className="relative mt-2 w-full max-w-full box-border min-w-0">
+            <select
+              className="block w-full max-w-full box-border min-w-0 appearance-none rounded-xl border border-violet-200/60 bg-white pl-4 pr-10 py-3.5 text-sm text-slate-900 outline-none transition placeholder:text-slate-400 focus:border-violet-500 focus:ring-4 focus:ring-violet-500/10 truncate cursor-pointer dark:border-white/10 dark:bg-[#070514] dark:text-white dark:focus:border-violet-400/70 dark:focus:ring-violet-400/10"
+              id="industry"
+              name="industry"
+              defaultValue=""
+              required
+            >
+              <option value="" disabled>Select your industry</option>
+              {industries.map((industry) => (
+                <option value={industry} key={industry} className="dark:bg-[#0B091B] text-slate-900 dark:text-white">
+                  {industry}
+                </option>
+              ))}
+            </select>
+            <ChevronDown
+              size={16}
+              className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500"
+            />
+          </div>
         </div>
         <div className="w-full max-w-full box-border min-w-0">
           <label className={labelClass} htmlFor="discoveryUrl">Google Maps or Instagram link <span className="font-normal text-slate-400">(optional)</span></label>
