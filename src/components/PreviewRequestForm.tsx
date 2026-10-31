@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, Check, ChevronDown, CircleCheck, MessageCircle, Send } from "lucide-react";
 import { useState } from "react";
+import { getWhatsAppUrl, WHATSAPP_DISPLAY_NUMBER } from "@/lib/constants";
 
 const industries = [
   "Hospitality & dining",
@@ -44,7 +45,7 @@ export function PreviewRequestForm() {
       message += `\nWhatsApp: ${formWhatsappNumber}`;
     }
 
-    const whatsappUrl = `https://wa.me/923124915599?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = getWhatsAppUrl(message);
 
     window.open(whatsappUrl, "_blank");
     setStatus("success");
@@ -52,15 +53,16 @@ export function PreviewRequestForm() {
   };
 
   if (status === "success") {
-    const whatsappText = encodeURIComponent(`Hi NexaFlow team, I'm ${userName || "reaching out"} and I just requested a free preview for ${businessName}. Can we chat about next steps?`);
-    const whatsappFallbackLink = `https://wa.me/923124915599?text=${whatsappText}`;
+    const whatsappFallbackLink = getWhatsAppUrl(
+      `Hi NexaFlow team, I'm ${userName || "reaching out"} and I just requested a free preview for ${businessName}. Can we chat about next steps?`
+    );
     return (
       <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="rounded-[28px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl p-7 sm:p-9 dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)]">
         <span className="grid h-14 w-14 place-items-center rounded-2xl bg-violet-500/10 text-violet-700 dark:text-violet-300"><CircleCheck size={27} /></span>
         <p className="mt-7 text-[10px] font-bold uppercase tracking-[0.2em] text-violet-700 dark:text-violet-300">Request received</p>
         <h2 className="mt-3 text-3xl font-semibold tracking-[-0.05em] text-slate-950 dark:text-white">We’re on it, {businessName.split(" ")[0] || "there"}.</h2>
         <p className="mt-3 max-w-md text-sm leading-7 text-slate-600 dark:text-slate-400">Your free preview is in the queue. We’ll review your business and send a first look within 48 hours. Want to jump the queue? Message us directly.</p>
-        <a href={whatsappFallbackLink} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#09091B] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#181832] dark:bg-white dark:text-[#09091B] dark:shadow-lg dark:shadow-white/10 dark:hover:bg-violet-50"><MessageCircle size={16} /> Open WhatsApp priority chat <ArrowUpRight size={15} /></a>
+        <a href={whatsappFallbackLink} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#09091B] px-5 py-3 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#181832] dark:bg-white dark:text-[#09091B] dark:shadow-lg dark:shadow-white/10 dark:hover:bg-violet-50"><MessageCircle size={16} /> Open WhatsApp priority chat ({WHATSAPP_DISPLAY_NUMBER}) <ArrowUpRight size={15} /></a>
         <button type="button" onClick={() => setStatus("idle")} className="mt-5 flex items-center gap-2 text-xs font-semibold text-slate-500 transition-colors hover:text-slate-950 dark:text-slate-400 dark:hover:text-white"><ArrowLeft size={13} /> Submit another business</button>
       </motion.div>
     );

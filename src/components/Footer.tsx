@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import { NexaFlowLogo } from "@/components/NexaFlowLogo";
+import { getWhatsAppUrl, DEFAULT_INQUIRY_MESSAGE, CONTACT_EMAIL, WHATSAPP_DISPLAY_NUMBER } from "@/lib/constants";
 
 const footerLinks = [
   { label: "Why NexaFlow", href: "/why-us" },
@@ -43,20 +44,20 @@ export function Footer() {
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Direct Contact</p>
             <ul className="mt-5 space-y-3">
               <li>
-                <a href="mailto:hello@nexaflow.studio" className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-300">
+                <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-300">
                   <Mail size={13} className="shrink-0 text-slate-400" />
-                  hello@nexaflow.studio
+                  {CONTACT_EMAIL}
                 </a>
               </li>
               <li>
                 <a
-                  href={`https://wa.me/?text=${encodeURIComponent("Hi NexaFlow, I'd like to enquire about a website preview.")}`}
+                  href={getWhatsAppUrl(DEFAULT_INQUIRY_MESSAGE)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-300"
                 >
                   <MessageCircle size={13} className="shrink-0 text-violet-600 dark:text-violet-400" />
-                  WhatsApp Priority Line
+                  <span>WhatsApp: {WHATSAPP_DISPLAY_NUMBER}</span>
                 </a>
               </li>
             </ul>

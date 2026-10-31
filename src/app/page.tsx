@@ -20,6 +20,7 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SpotlightCard } from "@/components/SpotlightCard";
+import { getWhatsAppUrl, DEFAULT_PREVIEW_MESSAGE } from "@/lib/constants";
 
 const steps = [
   { icon: Globe2, label: "Edge load", value: "0.7s", note: "Fast from the first tap", color: "indigo" },
@@ -90,7 +91,7 @@ export default function HomePage() {
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="https://wa.me/923124915599?text=Hi%20NexaFlow%20team,%20I'm%20interested%20in%20the%20free%2048-hour%20preview%20for%20my%20business."
+                href={getWhatsAppUrl(DEFAULT_PREVIEW_MESSAGE)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium transition-all duration-300 ease-in-out hover:bg-gray-200 hover:scale-[1.02]"
@@ -431,7 +432,7 @@ export default function HomePage() {
             <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-center">
               <div className="max-w-xl"><p className="text-[10px] font-bold uppercase tracking-[.2em] text-violet-300">Your next customer is searching</p><h2 className="mt-3 text-3xl font-semibold tracking-[-.05em] sm:text-4xl">Let's give them a reason to choose you.</h2><p className="mt-3 text-sm leading-6 text-white/60">Get a custom website preview in 48 hours. No card, no commitment.</p></div>
               <a
-                href="https://wa.me/923124915599?text=Hi%20NexaFlow%20team,%20I'm%20interested%20in%20the%20free%2048-hour%20preview%20for%20my%20business."
+                href={getWhatsAppUrl(DEFAULT_PREVIEW_MESSAGE)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-white px-6 py-4 text-sm font-semibold text-[#09091B] shadow-lg shadow-white/10 transition-all hover:-translate-y-0.5 hover:bg-violet-50"

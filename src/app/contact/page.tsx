@@ -3,13 +3,14 @@ import Link from "next/link";
 import { ArrowRight, ArrowUpRight, Check, Clock3, MessageCircle, ShieldCheck, Sparkles, WandSparkles } from "lucide-react";
 import { PreviewRequestForm } from "@/components/PreviewRequestForm";
 import { Reveal } from "@/components/Reveal";
+import { getWhatsAppUrl, DEFAULT_PREVIEW_MESSAGE, WHATSAPP_DISPLAY_NUMBER } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Get your free website preview",
   description: "Tell us about your business and get a custom website preview in 48 hours. No card, no commitment.",
 };
 
-const whatsappLink = `https://wa.me/923124915599?text=${encodeURIComponent("Hi NexaFlow team, I'm interested in the free 48-hour preview for my business.")}`;
+const whatsappLink = getWhatsAppUrl(DEFAULT_PREVIEW_MESSAGE);
 
 export default function ContactPage() {
   return (
@@ -40,7 +41,7 @@ export default function ContactPage() {
           </Reveal>
 
           <Reveal delay={0.14}>
-            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="mt-4 flex items-center justify-between gap-3 rounded-[22px] border border-violet-200/70 bg-white/90 p-4 transition-all hover:border-violet-500/30 hover:bg-violet-50/50 dark:border-violet-500/20 dark:bg-[#0B091B]/85 dark:hover:border-violet-400/25"><span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-600 text-white"><MessageCircle size={18} /></span><span><span className="block text-xs font-semibold text-slate-950 dark:text-white">Want the priority lane?</span><span className="mt-1 block text-[9px] text-slate-500 dark:text-slate-400">Message us directly on WhatsApp</span></span></span><ArrowUpRight size={15} className="shrink-0 text-violet-700 dark:text-violet-300" /></a>
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="mt-4 flex items-center justify-between gap-3 rounded-[22px] border border-violet-200/70 bg-white/90 p-4 transition-all hover:border-violet-500/30 hover:bg-violet-50/50 dark:border-violet-500/20 dark:bg-[#0B091B]/85 dark:hover:border-violet-400/25"><span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-600 text-white"><MessageCircle size={18} /></span><span><span className="block text-xs font-semibold text-slate-950 dark:text-white">Want the priority lane?</span><span className="mt-1 block text-[9px] text-slate-500 dark:text-slate-400">Message us directly on WhatsApp ({WHATSAPP_DISPLAY_NUMBER})</span></span></span><ArrowUpRight size={15} className="shrink-0 text-violet-700 dark:text-violet-300" /></a>
           </Reveal>
         </div>
 
