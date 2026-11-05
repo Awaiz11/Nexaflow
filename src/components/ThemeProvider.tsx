@@ -18,16 +18,35 @@ type ThemeContextValue = {
 
 const ThemeContext = createContext<ThemeContextValue | undefined>(undefined);
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>("dark");
+type ThemeProviderProps = {
+  children: ReactNode;
+  defaultTheme?: Theme;
+  enableSystem?: boolean;
+};
+
+export function ThemeProvider({
+  children,
+  defaultTheme = "light",
+  enableSystem = false,
+}: ThemeProviderProps) {
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
     const saved = window.localStorage.getItem("shiftline-theme");
-    const nextTheme: Theme = saved === "light" ? "light" : "dark";
-    document.documentElement.classList.toggle("dark", nextTheme === "dark");
-    document.documentElement.style.colorScheme = nextTheme;
-    setTheme(nextTheme);
-  }, []);
+    let initialTheme: Theme = defaultTheme;
+
+    if (saved === "dark" || saved === "light") {
+      initialTheme = saved;
+    } else if (enableSystem && typeof window !== "undefined") {
+      initialTheme = window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light";
+    }
+
+    document.documentElement.classList.toggle("dark", initialTheme === "dark");
+    document.documentElement.style.colorScheme = initialTheme;
+    setTheme(initialTheme);
+  }, [defaultTheme, enableSystem]);
 
   const toggleTheme = useCallback(
     async () => {

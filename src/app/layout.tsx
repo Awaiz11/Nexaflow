@@ -45,11 +45,12 @@ export const metadata: Metadata = {
 const themeInitScript = `(() => {
   try {
     const saved = localStorage.getItem("shiftline-theme");
-    const theme = saved === "light" ? "light" : "dark";
+    const theme = saved === "dark" ? "dark" : "light";
     document.documentElement.classList.toggle("dark", theme === "dark");
     document.documentElement.style.colorScheme = theme;
   } catch {
-    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("dark");
+    document.documentElement.style.colorScheme = "light";
   }
 
   if (typeof window !== "undefined") {
@@ -88,7 +89,7 @@ const themeInitScript = `(() => {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
@@ -96,7 +97,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         className={`${jakarta.className} min-h-screen bg-[var(--page-bg)] text-[var(--text-primary)] antialiased`}
         suppressHydrationWarning
       >
-        <ThemeProvider>
+        <ThemeProvider defaultTheme="light" enableSystem={false}>
           <Navbar />
           <main className="pt-20">{children}</main>
           <Footer />
