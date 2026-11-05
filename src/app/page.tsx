@@ -110,11 +110,14 @@ export default function HomePage() {
         >
           {/* Badge */}
           <motion.div variants={heroItemVariants} className="inline-flex">
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-violet-200 bg-violet-50/90 p-1 pr-3.5 backdrop-blur-md shadow-sm dark:border-white/10 dark:border-t-white/25 dark:bg-neutral-900/60">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-500 to-violet-600 px-2.5 py-0.5 text-xs font-semibold text-white dark:from-amber-400 dark:to-orange-500 dark:text-black">
-                <Sparkles size={11} /> Update
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-violet-200/80 bg-violet-50/70 backdrop-blur-md dark:border-white/10 dark:border-t-white/20 dark:bg-white/5">
+              <span className="relative flex h-2 w-2 items-center justify-center">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-violet-400 opacity-60 dark:bg-amber-400" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-violet-600 dark:bg-amber-400" />
               </span>
-              <span className="text-xs font-semibold tracking-wide text-violet-950 dark:text-stone-300">Website-as-a-Service for local business</span>
+              <span className="text-xs font-medium tracking-wide uppercase text-violet-950 dark:text-stone-300">
+                Website-as-a-Service for local businesses
+              </span>
             </div>
           </motion.div>
 
