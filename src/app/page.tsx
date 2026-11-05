@@ -313,7 +313,7 @@ export default function HomePage() {
             },
           ].map((demo, index) => (
             <Reveal key={demo.key} delay={index * 0.07} className="h-full">
-              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-600/15 dark:bg-zinc-900 dark:border-zinc-800 dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] dark:hover:border-zinc-700 dark:hover:shadow-[0_12px_40px_rgba(0,0,0,0.6)]">
+              <div className="group relative flex h-full flex-col justify-between overflow-hidden rounded-3xl bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-violet-500/50 hover:shadow-xl hover:shadow-violet-600/15 dark:bg-zinc-900 dark:border-zinc-800 dark:shadow-[0_8px_30px_rgba(0,0,0,0.4)] dark:hover:border-zinc-700 dark:hover:shadow-black/60">
                 {/* Glowing Hover Effects — subtle border shine in dark mode, no neon bloom */}
                 <div
                   aria-hidden="true"
@@ -341,7 +341,7 @@ export default function HomePage() {
                       href={demo.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-violet-200/60 dark:border-zinc-700 bg-violet-50/60 dark:bg-zinc-800 text-gray-600 dark:text-zinc-300 backdrop-blur-md transition-all duration-300 hover:border-violet-500/40 hover:bg-violet-500/10 dark:hover:bg-zinc-700 dark:hover:text-zinc-50 hover:text-violet-700 hover:scale-105"
+                      className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-violet-200/60 dark:border-zinc-700 bg-violet-50/60 dark:bg-zinc-800 text-gray-600 dark:text-zinc-300 backdrop-blur-md transition-all duration-300 hover:border-violet-500/40 hover:bg-violet-500/10 dark:hover:border-zinc-600 dark:hover:bg-zinc-700 dark:hover:text-zinc-50 hover:text-violet-700 hover:scale-105"
                       aria-label={`Open ${demo.name} in new tab`}
                     >
                       <ExternalLink size={14} />
@@ -433,7 +433,7 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-5 pb-24 pt-8 sm:px-8 lg:pb-32">
         <Reveal>
-          <div className="relative overflow-hidden rounded-[30px] bg-[#09091B] px-7 py-10 text-white sm:px-11 sm:py-12 border border-violet-500/20 shadow-2xl shadow-violet-950/30 dark:bg-zinc-900 dark:border-zinc-800 dark:shadow-[0_16px_50px_rgba(0,0,0,0.7)]">
+          <div className="relative overflow-hidden rounded-[30px] bg-[#09091B] px-7 py-10 text-white sm:px-11 sm:py-12 border border-violet-500/20 shadow-2xl shadow-violet-950/30 dark:bg-zinc-900 dark:border-zinc-800 dark:shadow-[0_16px_50px_rgba(0,0,0,0.7)] dark:shadow-black/70">
             <div aria-hidden="true" className="absolute -right-20 -top-40 h-[360px] w-[360px] rounded-full bg-violet-600/25 blur-[90px] dark:hidden" />
             <div aria-hidden="true" className="absolute -left-20 bottom-0 h-[280px] w-[280px] rounded-full bg-indigo-600/20 blur-[80px] dark:hidden" />
             <div className="relative flex flex-col justify-between gap-8 md:flex-row md:items-center">

@@ -46,14 +46,14 @@ body {
   background-attachment: fixed;
 }
 
-/* DARK MODE: Premium editorial — sharp zinc base, no neon blooms */
+/* DARK MODE: Solid, deep slate/black (#09090b) base — strictly zero purple, violet, or gradients */
+html.dark,
+html.dark body,
+.dark,
 .dark body {
-  background-color: #09090b;
-  color: #fafafa;
-  /* Faint, warm-neutral vignette — no colored glows */
-  background-image:
-    radial-gradient(ellipse at 50% 0%, rgba(255, 255, 255, 0.025) 0%, transparent 55%);
-  background-attachment: fixed;
+  background-color: #09090b !important;
+  background-image: none !important;
+  color: #fafafa !important;
 }
 
 /* Text selection — neutral in dark mode */

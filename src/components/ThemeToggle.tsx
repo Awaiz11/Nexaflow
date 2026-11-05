@@ -13,7 +13,7 @@ export function ThemeToggle() {
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       aria-pressed={theme === "dark"}
       onClick={(e) => toggleTheme(e.clientX, e.clientY)}
-      className="theme-toggle group relative inline-flex h-10 w-[76px] shrink-0 items-center rounded-full border border-violet-200/60 bg-white/80 p-1 backdrop-blur-md hover:border-violet-400/50 dark:border-white/10 dark:bg-white/[0.05] dark:hover:border-violet-400/30"
+      className="theme-toggle group relative inline-flex h-10 w-[76px] shrink-0 items-center rounded-full border border-violet-200/60 bg-white/80 p-1 backdrop-blur-md hover:border-violet-400/50 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-zinc-700"
     >
       <motion.span
         aria-hidden="true"
