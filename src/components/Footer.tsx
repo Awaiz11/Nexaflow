@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowUpRight, Mail, MessageCircle, ShieldCheck } from "lucide-react";
 import { NexaFlowLogo } from "@/components/NexaFlowLogo";
-import { getWhatsAppUrl, DEFAULT_INQUIRY_MESSAGE, CONTACT_EMAIL, WHATSAPP_DISPLAY_NUMBER } from "@/lib/constants";
+import { getWhatsAppUrl, DEFAULT_INQUIRY_MESSAGE, CONTACT_EMAIL, WHATSAPP_DISPLAY_NUMBER, getGmailUrl } from "@/lib/constants";
 
 const footerLinks = [
   { label: "Why NexaFlow", href: "/why-us" },
@@ -44,7 +44,12 @@ export function Footer() {
             <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400">Direct Contact</p>
             <ul className="mt-5 space-y-3">
               <li>
-                <a href={`mailto:${CONTACT_EMAIL}`} className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-300">
+                <a
+                  href={getGmailUrl("Website Inquiry - NexaFlow", "Hi Awaiz, I'm interested in getting a website preview for my business.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-300"
+                >
                   <Mail size={13} className="shrink-0 text-slate-400" />
                   {CONTACT_EMAIL}
                 </a>

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Check, Clock3, MessageCircle, ShieldCheck, Sparkles, WandSparkles } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Check, Clock3, Mail, MessageCircle, ShieldCheck, Sparkles, WandSparkles } from "lucide-react";
 import { PreviewRequestForm } from "@/components/PreviewRequestForm";
 import { Reveal } from "@/components/Reveal";
-import { getWhatsAppUrl, DEFAULT_PREVIEW_MESSAGE, WHATSAPP_DISPLAY_NUMBER } from "@/lib/constants";
+import { getWhatsAppUrl, DEFAULT_PREVIEW_MESSAGE, WHATSAPP_DISPLAY_NUMBER, CONTACT_EMAIL, getGmailUrl } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Get your free website preview",
@@ -42,6 +42,26 @@ export default function ContactPage() {
 
           <Reveal delay={0.14}>
             <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="mt-4 flex items-center justify-between gap-3 rounded-[22px] border border-violet-200/70 bg-white/90 p-4 transition-all hover:border-violet-500/30 hover:bg-violet-50/50 dark:border-violet-500/20 dark:bg-[#0B091B]/85 dark:hover:border-violet-400/25"><span className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-600 text-white"><MessageCircle size={18} /></span><span><span className="block text-xs font-semibold text-slate-950 dark:text-white">Want the priority lane?</span><span className="mt-1 block text-[9px] text-slate-500 dark:text-slate-400">Message us directly on WhatsApp ({WHATSAPP_DISPLAY_NUMBER})</span></span></span><ArrowUpRight size={15} className="shrink-0 text-violet-700 dark:text-violet-300" /></a>
+          </Reveal>
+
+          <Reveal delay={0.18}>
+            <a
+              href={getGmailUrl("Website Preview Request", "Hi Awaiz, I'm interested in getting a 48-hour website preview for my business.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-3 flex items-center justify-between gap-3 rounded-[22px] border border-violet-200/70 bg-white/90 p-4 transition-all hover:border-violet-500/30 hover:bg-violet-50/50 dark:border-violet-500/20 dark:bg-[#0B091B]/85 dark:hover:border-violet-400/25"
+            >
+              <span className="flex items-center gap-3">
+                <span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-500/10 text-violet-700 dark:bg-violet-500/20 dark:text-violet-300">
+                  <Mail size={18} />
+                </span>
+                <span>
+                  <span className="block text-xs font-semibold text-slate-950 dark:text-white">Email via Gmail</span>
+                  <span className="mt-1 block text-[9px] text-slate-500 dark:text-slate-400">{CONTACT_EMAIL}</span>
+                </span>
+              </span>
+              <ArrowUpRight size={15} className="shrink-0 text-violet-700 dark:text-violet-300" />
+            </a>
           </Reveal>
         </div>
 

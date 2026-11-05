@@ -37,5 +37,19 @@ export const DEFAULT_PREVIEW_MESSAGE =
 export const DEFAULT_INQUIRY_MESSAGE =
   "Hi NexaFlow, I'd like to enquire about a website preview.";
 
-export const CONTACT_EMAIL = "hello@nexaflow.studio";
+export const CONTACT_EMAIL = "awaiztabassam3@gmail.com";
+
+/**
+ * Direct Gmail compose URL so users can open Gmail directly with pre-filled recipient and message
+ * (similar to how wa.me works for WhatsApp).
+ * Example: https://mail.google.com/mail/?view=cm&fs=1&to=awaiztabassam3@gmail.com
+ */
+export const getGmailUrl = (subject?: string, body?: string): string => {
+  const base = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}`;
+  const params: string[] = [];
+  if (subject) params.push(`su=${encodeURIComponent(subject)}`);
+  if (body) params.push(`body=${encodeURIComponent(body)}`);
+  return params.length > 0 ? `${base}&${params.join("&")}` : base;
+};
+
 
