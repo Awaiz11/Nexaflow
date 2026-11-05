@@ -18,25 +18,25 @@
 
 html.dark {
   color-scheme: dark;
-  /* Premium Editorial — dark zinc/slate base, burnt-orange accent */
-  --page-bg: #09090b;
-  --surface: #111113;
-  --surface-raised: #18181b;
-  --text-primary: #fafafa;
-  --text-body: #a1a1aa;
-  --text-muted: #71717a;
-  --line: rgba(255, 255, 255, 0.07);
-  /* accent: electric-blue replaces violet; burnt-orange as secondary */
-  --indigo: #60a5fa;   /* blue-400 */
-  --violet: #fb923c;   /* orange-400 — editorial warm accent */
-  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.6);
+  /* Expensive Editorial Dark Theme — True Black with Champagne Gold & Burnt Amber Accents */
+  --page-bg: #000000;
+  --surface: #0c0c0e;
+  --surface-raised: #141416;
+  --text-primary: #ffffff;
+  --text-body: #a8a29e;   /* stone-400 */
+  --text-muted: #78716c;  /* stone-500 */
+  --line: rgba(255, 255, 255, 0.08);
+  /* Accents */
+  --champagne: #d4af37;
+  --amber: #f59e0b;
+  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.85);
 }
 
 /* ─── Base Reset ────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
 
-/* LIGHT MODE: Icy white base with a soft pastel purple/lavender dome at the bottom */
+/* LIGHT MODE: Icy white base with a soft pastel purple/lavender dome at the bottom (100% UNTOUCHED) */
 body {
   min-height: 100vh;
   margin: 0;
@@ -46,19 +46,35 @@ body {
   background-attachment: fixed;
 }
 
-/* DARK MODE: Solid, deep slate/black (#09090b) base — strictly zero purple, violet, or gradients */
+/* DARK MODE: True black (#000000) base with subtle champagne & ember glow */
 html.dark,
 html.dark body,
 .dark,
 .dark body {
-  background-color: #09090b !important;
-  background-image: none !important;
-  color: #fafafa !important;
+  background-color: #000000 !important;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(212, 175, 55, 0.07) 0%, rgba(245, 158, 11, 0.03) 35%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 85% 65%, rgba(212, 175, 55, 0.02) 0%, transparent 60%) !important;
+  background-attachment: fixed !important;
+  color: #ffffff !important;
 }
 
-/* Text selection — neutral in dark mode */
+/* Subtle editorial noise/grain texture overlay (dark mode only) */
+html.dark body::before,
+.dark body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.032;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* Text selection — elegant champagne gold in dark mode */
 ::selection { background: rgba(124, 58, 237, 0.18); color: inherit; }
-.dark ::selection { background: rgba(251, 146, 60, 0.22); color: inherit; }
+.dark ::selection { background: rgba(212, 175, 55, 0.28); color: #ffffff; }
 a { text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
@@ -95,20 +111,20 @@ nextjs-portal {
   background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(109, 40, 217, 0.1), transparent 68%);
   transition: opacity 400ms ease;
 }
-/* Spotlight — subtle warm glow in dark mode (no neon violet) */
+/* Spotlight — subtle warm champagne gold glow in dark mode */
 .dark .spotlight-card::before {
-  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(251, 146, 60, 0.07), transparent 68%);
+  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(212, 175, 55, 0.08), transparent 68%);
 }
 .spotlight-card:hover::before { opacity: 1; }
 .spotlight-card > * { position: relative; z-index: 1; }
 
 /* ─── Animations ────────────────────────────────────────── */
 @keyframes status-pulse { 0%, 100% { opacity: .55; transform: scale(.85); } 50% { opacity: 1; transform: scale(1.1); } }
-@keyframes soft-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes soft-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 @keyframes flow-line { to { stroke-dashoffset: -24; } }
 
 .status-pulse { animation: status-pulse 2s ease-in-out infinite; }
-.soft-float { animation: soft-float 6s ease-in-out infinite; }
+.soft-float { animation: soft-float 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite; }
 .flow-line { stroke-dasharray: 5 7; animation: flow-line 1.2s linear infinite; }
 
 /* ─── Reduced Motion ────────────────────────────────────── */

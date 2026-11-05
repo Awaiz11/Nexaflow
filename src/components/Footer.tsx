@@ -12,45 +12,45 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-violet-200/50 bg-white/70 backdrop-blur-xl dark:border-zinc-800 dark:bg-zinc-950">
+    <footer className="mt-24 border-t border-violet-200/50 bg-white/70 backdrop-blur-xl dark:border-white/10 dark:bg-black/90">
       <div className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-16">
         <div className="grid gap-10 md:grid-cols-[1.15fr_0.65fr_0.75fr_0.85fr]">
           <div className="max-w-md">
             <Link href="/" className="group inline-flex items-center" aria-label="NexaFlow home">
               <NexaFlowLogo size={36} textSize="text-xl" />
             </Link>
-            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600 dark:text-zinc-400">
+            <p className="mt-5 max-w-sm text-sm leading-7 text-slate-600 dark:text-stone-400">
               A better website shouldn’t take a quarter, a big deposit, or a technical team. We build, launch and look after it — so you can focus on your next customer.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              <span className="inline-flex items-center gap-2 rounded-full border border-violet-600/15 bg-violet-600/[0.06] px-3 py-2 text-[11px] font-semibold text-violet-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300">
-                <span className="relative h-2 w-2 rounded-full bg-violet-600 dark:bg-orange-400"><span className="absolute inset-0 animate-ping rounded-full bg-violet-500 dark:bg-orange-500 opacity-40" /></span>
+              <span className="inline-flex items-center gap-2 rounded-full border border-violet-600/15 bg-violet-600/[0.06] px-3 py-2 text-[11px] font-semibold text-violet-700 dark:border-white/10 dark:bg-neutral-900/60 dark:text-stone-300">
+                <span className="relative h-2 w-2 rounded-full bg-violet-600 dark:bg-amber-400"><span className="absolute inset-0 animate-ping rounded-full bg-violet-500 dark:bg-amber-500 opacity-40" /></span>
                 &lt;0.7s Global Edge Active
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200/60 bg-white/80 px-3 py-2 text-[11px] font-semibold text-slate-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-300"><ShieldCheck size={13} className="text-violet-600 dark:text-orange-400" /> 100% ownership guarantee</span>
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200/60 bg-white/80 px-3 py-2 text-[11px] font-semibold text-slate-600 dark:border-white/10 dark:bg-neutral-900/60 dark:text-stone-300"><ShieldCheck size={13} className="text-violet-600 dark:text-amber-400" /> 100% ownership guarantee</span>
             </div>
           </div>
 
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-zinc-500">Explore</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-stone-500">Explore</p>
             <ul className="mt-5 space-y-3">
               {footerLinks.map((item) => (
-                <li key={item.href}><Link className="text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-zinc-400 dark:hover:text-orange-400" href={item.href}>{item.label}</Link></li>
+                <li key={item.href}><Link className="text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-stone-400 dark:hover:text-amber-400" href={item.href}>{item.label}</Link></li>
               ))}
             </ul>
           </div>
 
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-zinc-500">Direct Contact</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-stone-500">Direct Contact</p>
             <ul className="mt-5 space-y-3">
               <li>
                 <a
                   href={getGmailUrl("Website Inquiry - NexaFlow", "Hi Awaiz, I'm interested in getting a website preview for my business.")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-zinc-400 dark:hover:text-orange-400"
+                  className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-stone-400 dark:hover:text-amber-400"
                 >
-                  <Mail size={13} className="shrink-0 text-slate-400 dark:text-zinc-500" />
+                  <Mail size={13} className="shrink-0 text-slate-400 dark:text-stone-500" />
                   {CONTACT_EMAIL}
                 </a>
               </li>
@@ -59,9 +59,9 @@ export function Footer() {
                   href={getWhatsAppUrl(DEFAULT_INQUIRY_MESSAGE)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-zinc-400 dark:hover:text-orange-400"
+                  className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-stone-400 dark:hover:text-amber-400"
                 >
-                  <MessageCircle size={13} className="shrink-0 text-violet-600 dark:text-orange-400" />
+                  <MessageCircle size={13} className="shrink-0 text-violet-600 dark:text-amber-400" />
                   <span>WhatsApp: {WHATSAPP_DISPLAY_NUMBER}</span>
                 </a>
               </li>
@@ -69,12 +69,12 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-zinc-500">Your next step</p>
-            <h3 className="mt-5 text-xl font-semibold tracking-[-0.04em] text-slate-950 dark:text-zinc-50">Let’s make your<br />first impression count.</h3>
-            <Link href="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 transition-colors hover:text-violet-500 dark:text-orange-400 dark:hover:text-orange-300">Request a free preview <ArrowUpRight size={15} /></Link>
+            <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-slate-400 dark:text-stone-500">Your next step</p>
+            <h3 className="mt-5 text-xl font-semibold tracking-tight text-slate-950 dark:text-white">Let’s make your<br />first impression count.</h3>
+            <Link href="/contact" className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-violet-700 transition-colors hover:text-violet-500 dark:text-amber-400 dark:hover:text-amber-300">Request a free preview <ArrowUpRight size={15} /></Link>
           </div>
         </div>
-        <div className="mt-12 flex flex-col gap-3 border-t border-violet-200/50 pt-6 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:justify-between dark:border-zinc-800 dark:text-zinc-500">
+        <div className="mt-12 flex flex-col gap-3 border-t border-violet-200/50 pt-6 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:justify-between dark:border-white/10 dark:text-stone-500">
           <span>© {new Date().getFullYear()} NexaFlow Studio. Built for businesses that move.</span>
           <span>48-hour preview · $0 down · Cancel anytime</span>
         </div>
