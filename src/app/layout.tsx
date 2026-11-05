@@ -93,7 +93,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body
-        className={`${jakarta.className} min-h-screen bg-[#FAFAFF] dark:bg-black text-[#0A0A0A] dark:text-white antialiased`}
+        className={`${jakarta.className} min-h-screen bg-[var(--page-bg)] text-[var(--text-primary)] antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider>
