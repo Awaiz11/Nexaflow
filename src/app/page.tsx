@@ -108,13 +108,14 @@ export default function HomePage() {
           animate="visible"
           className="max-w-2xl"
         >
-          {/* Ventrix-style glassmorphic badge with inner gradient tag */}
+          {/* Eyebrow badge */}
           <motion.div variants={heroFadeUp}>
-            <div className="inline-flex items-center gap-2.5 rounded-full border border-violet-200 bg-violet-50/90 p-1 pr-3.5 backdrop-blur-md shadow-sm dark:border-white/10 dark:bg-white/5">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-blue-500 to-violet-600 px-2.5 py-0.5 text-xs font-semibold text-white">
-                <Sparkles size={11} /> Update
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-zinc-200/80 bg-zinc-100 text-xs font-medium tracking-wide text-zinc-700 backdrop-blur-sm dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-300">
+              <span className="relative flex h-2 w-2 items-center justify-center">
+                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-50" />
+                <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-emerald-500" />
               </span>
-              <span className="text-xs font-semibold tracking-wide text-violet-950 dark:text-violet-300">Website-as-a-Service for local business</span>
+              <span>Website-as-a-Service for local businesses</span>
             </div>
           </motion.div>
 
