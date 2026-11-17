@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, MotionConfig } from "framer-motion";
 import { ArrowUpRight, Check, MessageCircle } from "lucide-react";
 import { HeroShowcase } from "@/components/HeroShowcase";
+import { WordReveal } from "@/components/WordReveal";
 import { getWhatsAppUrl, DEFAULT_PREVIEW_MESSAGE } from "@/lib/constants";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -63,7 +64,6 @@ const steps = [
 const previewUrl = getWhatsAppUrl(DEFAULT_PREVIEW_MESSAGE);
 
 const headline = "When someone nearby looks you up, give them a reason to book.";
-const headlineWords = headline.split(" ");
 
 export default function HomePage() {
   return (
@@ -71,35 +71,19 @@ export default function HomePage() {
       {/* Hero */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-16 sm:px-8 sm:pt-20 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12 lg:pb-32 lg:pt-24">
         <div className="max-w-xl">
-          <h1 aria-label={headline} className="text-[clamp(2.7rem,5.2vw,4.6rem)] leading-[1.03] text-ink">
-            {headlineWords.map((word, index) => (
-              <span key={index}>
-                <span aria-hidden="true" className="-mb-[0.14em] inline-block overflow-hidden pb-[0.14em] align-top">
-                  <motion.span
-                    className="inline-block"
-                    initial={{ y: "108%" }}
-                    animate={{ y: 0 }}
-                    transition={{ duration: 0.95, delay: 0.08 + index * 0.045, ease }}
-                  >
-                    {word}
-                  </motion.span>
-                </span>
-                {index < headlineWords.length - 1 ? " " : null}
-              </span>
-            ))}
-          </h1>
+          <WordReveal as="h1" text={headline} delay={0.1} stagger={0.07} className="text-[clamp(2.7rem,5.2vw,4.6rem)] leading-[1.03] text-ink" />
           <motion.p
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.65, ease }}
+            transition={{ duration: 0.9, delay: 0.85, ease }}
             className="mt-7 max-w-lg text-lg leading-8 text-ink-soft"
           >
             NexaFlow designs, launches and looks after websites for restaurants, salons, studios and shops. See a free preview of yours in 48 hours, then decide.
           </motion.p>
           <motion.div
-            initial={{ opacity: 0, y: 14 }}
+            initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.78, ease }}
+            transition={{ duration: 0.9, delay: 1, ease }}
             className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
             <a
@@ -117,7 +101,7 @@ export default function HomePage() {
           <motion.ul
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.95, ease }}
+            transition={{ duration: 0.9, delay: 1.15, ease }}
             className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted"
           >
             {["$0 down to launch", "You own your website", "Cancel anytime"].map((item) => (
@@ -135,7 +119,7 @@ export default function HomePage() {
       {/* What the site does for the business */}
       <section className="border-y border-line bg-paper-deep/60">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
-          <h2 className="max-w-2xl text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink">Built around how people actually choose a local business.</h2>
+          <WordReveal onScroll text="Built around how people actually choose a local business." className="max-w-2xl text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink" />
           <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-10">
             {benefits.map((item, index) => (
               <motion.div key={item.title} className="relative pt-6" initial="hidden" whileInView="shown" viewport={{ once: true, margin: "-80px" }}>
@@ -157,7 +141,7 @@ export default function HomePage() {
       {/* Recent work */}
       <section id="work" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-          <h2 className="text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink">Recent work</h2>
+          <WordReveal onScroll text="Recent work" className="text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink" />
           <Link href="/themes" className="text-[15px] font-medium text-ink underline decoration-line decoration-2 underline-offset-[6px] hover:decoration-brand">
             Browse all eight sites
           </Link>
@@ -170,14 +154,28 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
               className="group block"
-              initial={{ opacity: 0, y: 28 }}
+              initial={{ opacity: 0, y: 48 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.9, delay: index * 0.1, ease }}
             >
-              <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-line bg-paper-deep">
-                <Image src={site.image} alt={`${site.name} website`} fill sizes="(max-width: 768px) 90vw, 400px" className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
-              </div>
+              <motion.div
+                className="relative aspect-[16/10] overflow-hidden rounded-lg border border-line bg-paper-deep"
+                initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
+                whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 1.1, delay: 0.1 + index * 0.12, ease }}
+              >
+                <motion.div
+                  className="absolute inset-0"
+                  initial={{ scale: 1.25 }}
+                  whileInView={{ scale: 1 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ duration: 1.4, delay: 0.1 + index * 0.12, ease }}
+                >
+                  <Image src={site.image} alt={`${site.name} website`} fill sizes="(max-width: 768px) 90vw, 400px" className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]" />
+                </motion.div>
+              </motion.div>
               <div className="mt-4 flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-lg font-semibold text-ink">{site.name}</h3>
@@ -194,19 +192,27 @@ export default function HomePage() {
       <section id="how-it-works" className="scroll-mt-24 mx-auto max-w-7xl px-5 pb-20 sm:px-8 lg:pb-28">
         <div className="grid gap-12 border-t border-line pt-16 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
           <div>
-            <h2 className="text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink">From first message to live website.</h2>
+            <WordReveal onScroll text="From first message to live website." className="text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink" />
             <p className="mt-5 max-w-sm text-[15px] leading-7 text-ink-soft">No long discovery calls and no deposit. You see your site before you pay for anything.</p>
           </div>
           <ol className="grid gap-10 sm:grid-cols-3 sm:gap-8">
             {steps.map((step, index) => (
               <motion.li
                 key={step.title}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
                 transition={{ duration: 0.8, delay: index * 0.15, ease }}
               >
-                <span className="font-display text-5xl leading-none text-brand dark:text-brass">{index + 1}</span>
+                <motion.span
+                  className="inline-block font-display text-5xl leading-none text-brand dark:text-brass"
+                  initial={{ scale: 0.4, opacity: 0 }}
+                  whileInView={{ scale: 1, opacity: 1 }}
+                  viewport={{ once: true, margin: "-60px" }}
+                  transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.15 + index * 0.15 }}
+                >
+                  {index + 1}
+                </motion.span>
                 <h3 className="mt-5 text-lg font-semibold text-ink">{step.title}</h3>
                 <p className="mt-3 text-[15px] leading-7 text-ink-soft">{step.body}</p>
               </motion.li>
@@ -217,8 +223,14 @@ export default function HomePage() {
 
       {/* Closing call to action */}
       <section className="mx-auto max-w-7xl px-5 pb-10 sm:px-8">
-        <div className="rounded-2xl bg-brand px-7 py-14 text-brand-ink sm:px-14 sm:py-20 dark:bg-[#1f4d3b] dark:text-ink">
-          <h2 className="max-w-2xl text-[clamp(2.1rem,4vw,3.4rem)] leading-[1.05]">See your new website before you pay anything.</h2>
+        <motion.div
+          className="rounded-2xl bg-brand px-7 py-14 text-brand-ink sm:px-14 sm:py-20 dark:bg-[#1f4d3b] dark:text-ink"
+          initial={{ opacity: 0, scale: 0.9, y: 40 }}
+          whileInView={{ opacity: 1, scale: 1, y: 0 }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 1, ease }}
+        >
+          <WordReveal onScroll text="See your new website before you pay anything." className="max-w-2xl text-[clamp(2.1rem,4vw,3.4rem)] leading-[1.05]" />
           <p className="mt-5 max-w-xl text-[17px] leading-8 opacity-85">
             Send us your business name on WhatsApp and we’ll send back a preview within 48 hours. Plans start at $49 a month, hosting and updates included.
           </p>
@@ -235,7 +247,7 @@ export default function HomePage() {
               Compare plans
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
     </MotionConfig>
   );

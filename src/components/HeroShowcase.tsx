@@ -18,6 +18,17 @@ const side = { host: "premium-corehaus-landing-page.vercel.app", image: "/coreha
 
 const CYCLE_MS = 4200;
 
+/** Slow idle bob so the stack never looks frozen. */
+function Float({ children, duration, delay }: { children: React.ReactNode; duration: number; delay: number }) {
+  const reduce = useReducedMotion();
+  if (reduce) return <>{children}</>;
+  return (
+    <motion.div animate={{ y: [0, -10, 0] }} transition={{ duration, delay, repeat: Infinity, ease: "easeInOut" }}>
+      {children}
+    </motion.div>
+  );
+}
+
 function Chrome({ host, children }: { host: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className="overflow-hidden rounded-xl border border-line bg-[var(--surface)] shadow-[0_24px_60px_-20px_rgba(28,33,29,0.35)] dark:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7)]">
@@ -49,14 +60,16 @@ export function HeroShowcase() {
   // Gentle depth: frames drift a few pixels against the pointer (mouse only).
   const px = useMotionValue(0);
   const py = useMotionValue(0);
-  const sx = useSpring(px, { stiffness: 70, damping: 18 });
-  const sy = useSpring(py, { stiffness: 70, damping: 18 });
-  const backX = useTransform(sx, (v) => v * -14);
-  const backY = useTransform(sy, (v) => v * -10);
-  const sideX = useTransform(sx, (v) => v * -8);
-  const sideY = useTransform(sy, (v) => v * -6);
-  const frontX = useTransform(sx, (v) => v * 10);
-  const frontY = useTransform(sy, (v) => v * 8);
+  const sx = useSpring(px, { stiffness: 90, damping: 16 });
+  const sy = useSpring(py, { stiffness: 90, damping: 16 });
+  const backX = useTransform(sx, (v) => v * -32);
+  const backY = useTransform(sy, (v) => v * -22);
+  const sideX = useTransform(sx, (v) => v * -20);
+  const sideY = useTransform(sy, (v) => v * -14);
+  const frontX = useTransform(sx, (v) => v * 18);
+  const frontY = useTransform(sy, (v) => v * 12);
+  const tiltY = useTransform(sx, (v) => v * 10);
+  const tiltX = useTransform(sy, (v) => v * -8);
 
   const onPointerMove = (event: React.PointerEvent<HTMLDivElement>) => {
     if (reduce || event.pointerType !== "mouse" || !ref.current) return;
@@ -72,28 +85,32 @@ export function HeroShowcase() {
   const current = featured[active];
 
   return (
-    <div ref={ref} onPointerMove={onPointerMove} onPointerLeave={resetPointer} className="relative mx-auto w-full max-w-[600px] sm:pb-24">
+    <div ref={ref} onPointerMove={onPointerMove} onPointerLeave={resetPointer} className="relative mx-auto w-full max-w-[600px] [perspective:1400px] sm:pb-24">
       <motion.div style={{ x: backX, y: backY }} className="absolute right-0 top-0 hidden w-[62%] sm:block">
-        <motion.div initial={{ opacity: 0, y: 48, rotate: 5 }} animate={{ opacity: 1, y: 0, rotate: 0 }} transition={{ duration: 1.1, delay: 0.55, ease }}>
+        <motion.div initial={{ opacity: 0, x: 160, y: -50, rotate: 14 }} animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }} transition={{ duration: 1.5, delay: 0.55, ease }}>
+          <Float duration={7} delay={2.1}>
           <Chrome host={back.host}>
             <Image src={back.image} alt={`${back.name} website`} fill sizes="380px" className="object-cover object-top" />
           </Chrome>
+          </Float>
         </motion.div>
       </motion.div>
 
       <motion.div style={{ x: sideX, y: sideY }} className="absolute bottom-0 left-0 hidden w-[56%] sm:block">
-        <motion.div initial={{ opacity: 0, y: 48, rotate: -5 }} animate={{ opacity: 1, y: 0, rotate: 0 }} transition={{ duration: 1.1, delay: 0.7, ease }}>
+        <motion.div initial={{ opacity: 0, x: -160, y: 70, rotate: -14 }} animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }} transition={{ duration: 1.5, delay: 0.7, ease }}>
+          <Float duration={8} delay={2.3}>
           <Chrome host={side.host}>
             <Image src={side.image} alt={`${side.name} website`} fill sizes="340px" className="object-cover object-top" />
           </Chrome>
+          </Float>
         </motion.div>
       </motion.div>
 
-      <motion.div style={{ x: frontX, y: frontY }} className="relative z-10 sm:ml-[9%] sm:mt-[18%] sm:w-[78%]">
+      <motion.div style={{ x: frontX, y: frontY, rotateX: tiltX, rotateY: tiltY }} className="relative z-10 sm:ml-[9%] sm:mt-[18%] sm:w-[78%]">
         <motion.div
-          initial={{ opacity: 0, y: 56, scale: 0.96 }}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 1.1, delay: 0.35, ease }}
+          initial={{ opacity: 0, y: 140, scale: 0.82, rotate: -4 }}
+          animate={{ opacity: 1, y: 0, scale: 1, rotate: 0 }}
+          transition={{ duration: 1.5, delay: 0.3, ease }}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
@@ -106,18 +123,26 @@ export function HeroShowcase() {
               </AnimatePresence>
             }
           >
-            {featured.map((site, index) => (
+            <AnimatePresence initial={false}>
               <motion.div
-                key={site.host}
-                className="absolute inset-0"
-                initial={false}
-                animate={{ opacity: index === active ? 1 : 0, scale: index === active ? 1 : 1.04 }}
-                transition={{ duration: 0.9, ease }}
-                aria-hidden={index !== active}
+                key={current.host}
+                className="absolute inset-0 overflow-hidden"
+                initial={{ clipPath: "inset(100% 0% 0% 0%)" }}
+                animate={{ clipPath: "inset(0% 0% 0% 0%)" }}
+                exit={{ opacity: 1, transition: { duration: 1 } }}
+                transition={{ duration: 1, ease }}
               >
-                <Image src={site.image} alt={`${site.name} website`} fill priority={index === 0} sizes="(max-width: 1024px) 90vw, 470px" className="object-cover object-top" />
+                <motion.div className="absolute inset-0" initial={{ scale: 1.15, y: 30 }} animate={{ scale: 1, y: 0 }} transition={{ duration: 1.3, ease }}>
+                  <Image src={current.image} alt={`${current.name} website`} fill priority sizes="(max-width: 1024px) 90vw, 470px" className="object-cover object-top" />
+                </motion.div>
               </motion.div>
-            ))}
+            </AnimatePresence>
+            {/* keep the other screenshots warm so the wipe never waits on a download */}
+            <div className="pointer-events-none absolute inset-0 -z-10 opacity-0" aria-hidden="true">
+              {featured.map((site) => (
+                <Image key={site.host} src={site.image} alt="" fill sizes="(max-width: 1024px) 90vw, 470px" priority className="object-cover" />
+              ))}
+            </div>
           </Chrome>
         </motion.div>
       </motion.div>
