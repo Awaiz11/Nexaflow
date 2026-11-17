@@ -146,7 +146,7 @@ export default function HomePage() {
               Get your free 48-hour preview <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </motion.a>
             <motion.div whileHover={{ scale: 1.02, y: -1 }} whileTap={{ scale: 0.98 }} transition={{ duration: 0.2 }}>
-              <Link href="/pricing" className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-violet-200/80 bg-white/70 px-6 py-4 text-base font-semibold text-[#09091B] transition-colors hover:border-violet-400/60 hover:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:text-[#FFFFFF] dark:hover:border-white/20 dark:hover:bg-white/[0.07]">
+              <Link href="#how-it-works" className="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-violet-200/80 bg-white/70 px-6 py-4 text-base font-semibold text-[#09091B] transition-colors hover:border-violet-400/60 hover:bg-white dark:border-white/10 dark:bg-white/[0.04] dark:text-[#FFFFFF] dark:hover:border-white/20 dark:hover:bg-white/[0.07]">
                 See how it works <ArrowRight size={16} />
               </Link>
             </motion.div>
@@ -379,11 +379,11 @@ export default function HomePage() {
             {
               key: "bloom",
               name: "Bloom & Bark",
-              descriptor: "Pet grooming & salon booking",
-              category: "Salons & Services",
+              descriptor: "Neighbourhood flower studio & bouquet reservations",
+              category: "Retail & Local",
               url: "https://bloom-bark.vercel.app",
               image: "/bloom-bark.png",
-              tags: ["Online booking", "WhatsApp"],
+              tags: ["Online reservations", "Local delivery"],
             },
             {
               key: "serene",
@@ -509,7 +509,7 @@ export default function HomePage() {
       </section>
 
       {/* 48-Hour Process Section */}
-      <section className="mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-20">
+      <section id="how-it-works" className="scroll-mt-24 mx-auto max-w-7xl px-5 py-14 sm:px-8 lg:py-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}

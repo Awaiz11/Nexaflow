@@ -45,7 +45,7 @@ export function Footer() {
             <ul className="mt-5 space-y-3">
               <li>
                 <a
-                  href={getGmailUrl("Website Inquiry - NexaFlow", "Hi Awaiz, I'm interested in getting a website preview for my business.")}
+                  href={getGmailUrl("Website Inquiry - NexaFlow", "Hi NexaFlow team, I'm interested in getting a website preview for my business.")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-sm text-slate-600 transition-colors hover:text-violet-600 dark:text-slate-400 dark:hover:text-violet-300"
@@ -75,8 +75,8 @@ export function Footer() {
           </div>
         </div>
         <div className="mt-12 flex flex-col gap-3 border-t border-violet-200/50 pt-6 text-[11px] text-slate-500 sm:flex-row sm:items-center sm:justify-between dark:border-violet-500/15 dark:text-slate-500">
-          <span>© {new Date().getFullYear()} NexaFlow Studio. Built for businesses that move.</span>
-          <span>48-hour preview · $0 down · Cancel anytime</span>
+          <span>© {new Date().getFullYear()} NexaFlow. Built for businesses that move.</span>
+          <span className="flex flex-wrap items-center gap-x-3 gap-y-1"><span>48-hour preview · $0 down · Cancel anytime</span><Link href="/privacy" className="transition-colors hover:text-violet-600 dark:hover:text-violet-300">Privacy</Link></span>
         </div>
       </div>
     </footer>

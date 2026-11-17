@@ -14,6 +14,7 @@ type Category =
   | "Salons & Services"
   | "Wellness & Clinics"
   | "Finance & B2B"
+  | "Retail & Local"
   | "Creative & Agency";
 
 type Demo = {
@@ -38,6 +39,7 @@ const categories: Category[] = [
   "Salons & Services",
   "Wellness & Clinics",
   "Finance & B2B",
+  "Retail & Local",
   "Creative & Agency",
 ];
 
@@ -60,15 +62,15 @@ const demos: Demo[] = [
   {
     name: "Bloom & Bark",
     title: "Bloom & Bark",
-    descriptor: "Pet grooming & salon booking",
-    description: "Pet grooming & salon booking",
-    category: "Salons & Services",
+    descriptor: "Neighbourhood flower studio & bouquet reservations",
+    description: "Neighbourhood flower studio & bouquet reservations",
+    category: "Retail & Local",
     url: "https://bloom-bark.vercel.app",
     liveLink: "https://bloom-bark.vercel.app",
-    tags: ["Service menu", "Online booking", "WhatsApp alert"],
-    features: ["Service menu", "Online booking", "WhatsApp alert"],
+    tags: ["Weekly collection", "Online reservations", "Local delivery"],
+    features: ["Weekly collection", "Online reservations", "Local delivery"],
     key: "bloom",
-    theme: "Pet care",
+    theme: "Florist",
     image: "/bloom-bark.png.jpg",
     src: "/bloom-bark.png.jpg",
   },
@@ -78,8 +80,8 @@ const demos: Demo[] = [
     descriptor: "Wellness & mindfulness studio",
     description: "Wellness & mindfulness studio",
     category: "Wellness & Clinics",
-    url: "https://serene.vercel.app",
-    liveLink: "https://serene.vercel.app",
+    url: "https://serena-nine-sooty.vercel.app",
+    liveLink: "https://serena-nine-sooty.vercel.app",
     tags: ["Class schedule", "Member journey", "Wellness portal"],
     features: ["Class schedule", "Member journey", "Wellness portal"],
     key: "serene",
