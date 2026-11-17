@@ -18,7 +18,7 @@ const plans = [
     name: "Growth Pro",
     price: "$79",
     description: "For teams ready to turn more attention into confirmed visits.",
-    features: ["Everything in Starter Care", "Advanced booking flow", "Local search foundations", "Review & reputation section", "Priority small updates", "24/7 Autonomous AI Booking Concierge", "Google Maps Local SEO Boost"],
+    features: ["Everything in Starter Care", "Advanced booking flow", "Local search foundations", "Review & reputation section", "Priority small updates", "Booking requests taken day and night", "Google Maps profile tune-up"],
     cta: "Choose Growth Pro",
     highlighted: true,
   },
