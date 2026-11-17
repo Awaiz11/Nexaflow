@@ -159,8 +159,8 @@ const demos: Demo[] = [
     features: ["Appointment booking", "Stylist showcase", "Full service menu"],
     key: "salon-code",
     theme: "Salon & styling",
-    image: "https://image.thum.io/get/width/1000/crop/700/https://salon-code-xg6g.vercel.app/",
-    src: "https://image.thum.io/get/width/1000/crop/700/https://salon-code-xg6g.vercel.app/",
+    image: "/luxe-haven-shot.jpg",
+    src: "/luxe-haven-shot.jpg",
   },
 ];
 
