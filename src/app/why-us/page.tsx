@@ -5,7 +5,8 @@ import { BeforeAfterSwitcher } from "@/components/BeforeAfterSwitcher";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
-  title: "Why Shiftline",
+  title: "Why NexaFlow",
+  alternates: { canonical: "/why-us" },
   description: "See why a managed, edge-fast website is a better fit for local business than a slow, expensive agency project.",
 };
 
@@ -52,7 +53,7 @@ export default function WhyUsPage() {
               <div className="flex items-end justify-between gap-4"><div><p className="text-[10px] font-semibold uppercase tracking-[.14em] text-slate-400">Time to useful page</p><div className="mt-3 flex items-baseline gap-2"><span className="text-5xl font-semibold tracking-[-.08em] text-slate-950 dark:text-white">0.7</span><span className="text-sm font-semibold text-violet-700 dark:text-violet-300">seconds</span></div></div><span className="mb-1 rounded-full border border-violet-500/20 bg-violet-500/[0.06] px-3 py-2 text-[10px] font-semibold text-violet-700 dark:text-violet-300">6× faster*</span></div>
               <div className="mt-7 space-y-5">
                 <div><div className="mb-2 flex items-center justify-between text-[11px]"><span className="font-medium text-slate-600 dark:text-slate-300">Traditional small-business site</span><span className="font-mono font-semibold text-slate-500">4.2s</span></div><div className="h-2.5 overflow-hidden rounded-full bg-slate-100 dark:bg-white/[0.06]"><div className="h-full w-[88%] rounded-full bg-slate-300 dark:bg-slate-600" /></div></div>
-                <div><div className="mb-2 flex items-center justify-between text-[11px]"><span className="font-medium text-slate-600 dark:text-slate-300">Shiftline edge build</span><span className="font-mono font-semibold text-violet-700 dark:text-violet-300">0.7s</span></div><div className="h-2.5 overflow-hidden rounded-full bg-slate-100 dark:bg-white/[0.06]"><div className="h-full w-[18%] rounded-full bg-violet-600 shadow-[0_0_14px_rgba(124,58,237,.4)]" /></div></div>
+                <div><div className="mb-2 flex items-center justify-between text-[11px]"><span className="font-medium text-slate-600 dark:text-slate-300">NexaFlow edge build</span><span className="font-mono font-semibold text-violet-700 dark:text-violet-300">0.7s</span></div><div className="h-2.5 overflow-hidden rounded-full bg-slate-100 dark:bg-white/[0.06]"><div className="h-full w-[18%] rounded-full bg-violet-600 shadow-[0_0_14px_rgba(124,58,237,.4)]" /></div></div>
               </div>
               <p className="mt-5 text-[9px] leading-4 text-slate-400">*Illustrative page-load comparison. Actual results vary by content, network and device.</p>
             </div>
@@ -67,7 +68,7 @@ export default function WhyUsPage() {
         <Reveal delay={0.08}>
           <div className="overflow-hidden rounded-[26px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)]">
             <div className="grid grid-cols-[1.1fr_1fr_1fr] border-b border-violet-200/60 bg-violet-50/50 px-4 py-4 sm:px-7 dark:border-violet-500/20 dark:bg-white/[0.025]">
-              <span className="text-[9px] font-bold uppercase tracking-[.16em] text-slate-400">What matters</span><span className="text-[9px] font-bold uppercase tracking-[.16em] text-slate-400">Traditional agency</span><span className="text-[9px] font-bold uppercase tracking-[.16em] text-violet-700 dark:text-violet-300">The Shiftline model</span>
+              <span className="text-[9px] font-bold uppercase tracking-[.16em] text-slate-400">What matters</span><span className="text-[9px] font-bold uppercase tracking-[.16em] text-slate-400">Traditional agency</span><span className="text-[9px] font-bold uppercase tracking-[.16em] text-violet-700 dark:text-violet-300">The NexaFlow model</span>
             </div>
             {comparison.map((row, index) => {
               const Icon = row.icon;

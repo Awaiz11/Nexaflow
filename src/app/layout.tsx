@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://nexaflow-brown.vercel.app"),
   title: "NexaFlow | Website-as-a-Service for Local Businesses",
   description: "Turn Google Maps & local searches into booked revenue automatically. Zero upfront cost, $0 down. Get a custom, high-converting website managed for you.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "NexaFlow | Website-as-a-Service",
     description: "Turn Google Maps & local searches into booked revenue automatically. Zero upfront cost.",

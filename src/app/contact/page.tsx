@@ -8,6 +8,7 @@ import { getWhatsAppUrl, DEFAULT_PREVIEW_MESSAGE, WHATSAPP_DISPLAY_NUMBER, CONTA
 export const metadata: Metadata = {
   title: "Get your free website preview",
   description: "Tell us about your business and get a custom website preview in 48 hours. No card, no commitment.",
+  alternates: { canonical: "/contact" },
 };
 
 const whatsappLink = getWhatsAppUrl(DEFAULT_PREVIEW_MESSAGE);
@@ -46,7 +47,7 @@ export default function ContactPage() {
 
           <Reveal delay={0.18}>
             <a
-              href={getGmailUrl("Website Preview Request", "Hi Awaiz, I'm interested in getting a 48-hour website preview for my business.")}
+              href={getGmailUrl("Website Preview Request", "Hi NexaFlow team, I'm interested in getting a 48-hour website preview for my business.")}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-3 flex items-center justify-between gap-3 rounded-[22px] border border-violet-200/70 bg-white/90 p-4 transition-all hover:border-violet-500/30 hover:bg-violet-50/50 dark:border-violet-500/20 dark:bg-[#0B091B]/85 dark:hover:border-violet-400/25"
