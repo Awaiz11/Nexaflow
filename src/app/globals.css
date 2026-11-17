@@ -113,7 +113,9 @@ body {
 
 /* Display type: unlayered so it wins over utility letter-spacing on headings */
 h1, h2 {
-  font-family: var(--font-display);
+  /* Read the next/font variable directly: --font-display is resolved on :root,
+     where the font variables are not set, so it would fall back to the body font. */
+  font-family: var(--nf-display), Georgia, "Times New Roman", serif;
   font-weight: 400;
   letter-spacing: -0.018em;
   font-optical-sizing: auto;

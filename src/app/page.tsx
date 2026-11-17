@@ -154,24 +154,24 @@ export default function HomePage() {
               target="_blank"
               rel="noopener noreferrer"
               className="group block"
-              initial={{ opacity: 0, y: 48 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.9, delay: index * 0.1, ease }}
+              initial="hidden"
+              whileInView="shown"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={{ hidden: { opacity: 0, y: 48 }, shown: { opacity: 1, y: 0, transition: { duration: 0.9, delay: index * 0.1, ease } } }}
             >
               <motion.div
                 className="relative aspect-[16/10] overflow-hidden rounded-lg border border-line bg-paper-deep"
-                initial={{ clipPath: "inset(0% 0% 100% 0%)" }}
-                whileInView={{ clipPath: "inset(0% 0% 0% 0%)" }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 1.1, delay: 0.1 + index * 0.12, ease }}
+                variants={{
+                  hidden: { clipPath: "inset(0% 0% 100% 0%)" },
+                  shown: { clipPath: "inset(0% 0% 0% 0%)", transition: { duration: 1.1, delay: 0.1 + index * 0.12, ease } },
+                }}
               >
                 <motion.div
                   className="absolute inset-0"
-                  initial={{ scale: 1.25 }}
-                  whileInView={{ scale: 1 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ duration: 1.4, delay: 0.1 + index * 0.12, ease }}
+                  variants={{
+                    hidden: { scale: 1.25 },
+                    shown: { scale: 1, transition: { duration: 1.4, delay: 0.1 + index * 0.12, ease } },
+                  }}
                 >
                   <Image src={site.image} alt={`${site.name} website`} fill sizes="(max-width: 768px) 90vw, 400px" className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.05]" />
                 </motion.div>

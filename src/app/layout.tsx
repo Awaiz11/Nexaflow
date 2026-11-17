@@ -93,12 +93,12 @@ const themeInitScript = `(() => {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className={`${sans.variable} ${display.variable}`} suppressHydrationWarning>
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body
-        className={`${sans.variable} ${display.variable} min-h-screen bg-paper font-sans text-ink antialiased`}
+        className="min-h-screen bg-paper font-sans text-ink antialiased"
         suppressHydrationWarning
       >
         <ThemeProvider defaultTheme="light" enableSystem={false}>
