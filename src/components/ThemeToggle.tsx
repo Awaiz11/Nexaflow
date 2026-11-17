@@ -17,7 +17,7 @@ export function ThemeToggle() {
     >
       <motion.span
         aria-hidden="true"
-        className="absolute left-1 top-1 grid h-8 w-8 place-items-center rounded-full bg-ink text-paper"
+        className="absolute left-1 top-1 z-10 grid h-8 w-8 place-items-center rounded-full bg-ink text-paper"
         animate={{ x: theme === "dark" ? 0 : 36 }}
         transition={{ type: "spring", stiffness: 420, damping: 28 }}
       >
