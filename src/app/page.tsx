@@ -386,13 +386,13 @@ export default function HomePage() {
               tags: ["Online reservations", "Local delivery"],
             },
             {
-              key: "serene",
-              name: "Serene",
-              descriptor: "Wellness & mindfulness studio",
+              key: "corehaus",
+              name: "Corehaus",
+              descriptor: "Reformer pilates & strength studio",
               category: "Wellness & Clinics",
-              url: "https://serena-nine-sooty.vercel.app",
-              image: "/serene.png",
-              tags: ["Class schedule", "Wellness"],
+              url: "https://premium-corehaus-landing-page.vercel.app/",
+              image: "/corehaus.png.jpg",
+              tags: ["Class booking", "Packages"],
             },
           ].map((demo, index) => (
             <motion.div

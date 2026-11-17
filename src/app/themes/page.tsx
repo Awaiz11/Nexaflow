@@ -13,7 +13,6 @@ type Category =
   | "Hospitality & Dining"
   | "Salons & Services"
   | "Wellness & Clinics"
-  | "Finance & B2B"
   | "Retail & Local"
   | "Creative & Agency";
 
@@ -38,7 +37,6 @@ const categories: Category[] = [
   "Hospitality & Dining",
   "Salons & Services",
   "Wellness & Clinics",
-  "Finance & B2B",
   "Retail & Local",
   "Creative & Agency",
 ];
@@ -73,36 +71,6 @@ const demos: Demo[] = [
     theme: "Florist",
     image: "/bloom-bark.png.jpg",
     src: "/bloom-bark.png.jpg",
-  },
-  {
-    name: "Serene",
-    title: "Serene",
-    descriptor: "Wellness & mindfulness studio",
-    description: "Wellness & mindfulness studio",
-    category: "Wellness & Clinics",
-    url: "https://serena-nine-sooty.vercel.app",
-    liveLink: "https://serena-nine-sooty.vercel.app",
-    tags: ["Class schedule", "Member journey", "Wellness portal"],
-    features: ["Class schedule", "Member journey", "Wellness portal"],
-    key: "serene",
-    theme: "Wellness",
-    image: "/serene.jpg",
-    src: "/serene.jpg",
-  },
-  {
-    name: "Ledgerly",
-    title: "Ledgerly",
-    descriptor: "Modern advisory & fintech portal",
-    description: "Modern advisory & fintech portal",
-    category: "Finance & B2B",
-    url: "https://ledgerly.vercel.app",
-    liveLink: "https://ledgerly.vercel.app",
-    tags: ["Trust-led", "Lead capture", "B2B UI"],
-    features: ["Trust-led", "Lead capture", "B2B UI"],
-    key: "ledgerly",
-    theme: "Financial services",
-    image: "/ledgerly.png.jpg",
-    src: "/ledgerly.png.jpg",
   },
   {
     name: "Aawaiz Studio",
