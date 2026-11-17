@@ -79,25 +79,25 @@
 
 html.dark {
   color-scheme: dark;
-  /* Forest night: deep bottle green ground, cream type, brass details */
-  --paper: #0f1e18;
-  --paper-deep: #14271f;
-  --ink: #f2ede2;
-  --ink-soft: #cdd2c8;
-  --muted: #93a197;
-  --line: #24392f;
-  --brand: #ece2cb;
-  --brand-ink: #0f1e18;
-  --brass: #d6b273;
+  /* Near-black ground, cream type and buttons; the brand green appears in accents */
+  --paper: #0b0b0a;
+  --paper-deep: #131312;
+  --ink: #f5f1e9;
+  --ink-soft: #cfcbc2;
+  --muted: #8f8c86;
+  --line: #242422;
+  --brand: #f5f1e9;
+  --brand-ink: #0b0b0a;
+  --brass: #c9a46a;
   --page-bg: var(--paper);
-  --surface: #162a22;
-  --surface-raised: #1b3128;
+  --surface: #161615;
+  --surface-raised: #1c1c1a;
   --text-primary: var(--ink);
   --text-body: var(--ink-soft);
   --text-muted: var(--muted);
   --indigo: var(--brand);
   --violet: var(--brand);
-  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.35);
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.5);
 }
 
 /* ─── Base Reset ────────────────────────────────────────── */

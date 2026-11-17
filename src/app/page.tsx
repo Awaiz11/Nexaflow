@@ -245,7 +245,7 @@ export default function HomePage() {
 
       {/* Closing call to action */}
       <section className="mx-auto max-w-7xl px-5 pb-10 sm:px-8">
-        <div className="rounded-2xl bg-brand px-7 py-14 text-brand-ink sm:px-14 sm:py-20 dark:border dark:border-line dark:bg-[#1d3a2d] dark:text-ink">
+        <div className="rounded-2xl bg-brand px-7 py-14 text-brand-ink sm:px-14 sm:py-20 dark:bg-[#1f4d3b] dark:text-ink">
           <h2 className="max-w-2xl text-[clamp(2.1rem,4vw,3.4rem)] leading-[1.05]">See your new website before you pay anything.</h2>
           <p className="mt-5 max-w-xl text-[17px] leading-8 opacity-85">
             Send us your business name on WhatsApp and we’ll send back a preview within 48 hours. Plans start at $49 a month, hosting and updates included.
