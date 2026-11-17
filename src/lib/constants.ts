@@ -1,4 +1,10 @@
 /**
+ * Public address of the site. Change this one line when the custom domain is live;
+ * metadata, the sitemap and robots.txt all read it.
+ */
+export const SITE_URL = "https://nexaflow-brown.vercel.app";
+
+/**
  * Global Agency Constants & Contact Configuration
  * Clean digits only (country code + number, e.g., 923354679492).
  * Formatted cleanly without '+', spaces, or dashes.

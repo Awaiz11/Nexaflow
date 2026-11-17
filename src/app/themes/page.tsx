@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, Check, ExternalLink, Gauge, LayoutTemplate, Sparkles } from "lucide-react";
+import { ArrowUpRight, Check, ExternalLink } from "lucide-react";
 import { useMemo, useState } from "react";
 import { Reveal } from "@/components/Reveal";
 
@@ -230,7 +230,6 @@ export default function ThemesPage() {
         <Reveal>
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div className="max-w-2xl"><h1 className="mt-7 text-[clamp(2.7rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-.07em] text-ink">Distinctive by design.<br /><span>Fast by default.</span></h1><p className="mt-5 max-w-xl text-base leading-7 text-ink-soft">A few live directions for the businesses people love to find. Each one is responsive, booking-ready and built to make the next step obvious.</p></div>
-            <div className="flex items-center gap-3 rounded-2xl border border-line bg-[var(--surface)] p-3.5"><span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-500/10 text-violet-700 dark:text-brass"><Gauge size={18} /></span><div><p className="text-[13px] font-semibold text-ink">99/100 PageSpeed</p><p className="mt-0.5 text-xs text-muted">A fast, frictionless starting point</p></div><Sparkles size={14} className="ml-2 text-violet-500 dark:text-brass" /></div>
           </div>
         </Reveal>
       </section>
@@ -250,9 +249,6 @@ export default function ThemesPage() {
             {filtered.map((demo, index) => <motion.article key={demo.key} layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 14 }} transition={{ duration: 0.32, delay: index * 0.035 }} className="group min-w-0 max-w-full overflow-hidden rounded-[27px] bg-[var(--surface)] border border-line transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl">
               <div className="relative overflow-hidden">
                 <ThemePreview demo={demo} />
-                <div className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-slate-950/75 px-2.5 py-1.5 text-xs font-bold text-white shadow-lg">
-                  <Gauge size={11} className="text-violet-300" /> 99/100
-                </div>
               </div>
               <div className="p-5 sm:p-6 min-w-0 overflow-hidden">
                 <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start min-w-0">

@@ -5,20 +5,22 @@ import { Footer } from "@/components/Footer";
 import { FloatingConcierge } from "@/components/FloatingConcierge";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SITE_URL } from "@/lib/constants";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const sans = Schibsted_Grotesk({ subsets: ["latin"], variable: "--nf-sans" });
 const display = Newsreader({ subsets: ["latin"], variable: "--nf-display", style: ["normal", "italic"], axes: ["opsz"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://nexaflow-brown.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: "NexaFlow | Websites for local businesses",
   description: "NexaFlow designs, launches and looks after websites for restaurants, salons, studios and shops. See a free preview of yours in 48 hours. $0 down, cancel anytime.",
   alternates: { canonical: "/" },
   openGraph: {
     title: "NexaFlow | Websites for local businesses",
     description: "Websites for local businesses, built and looked after for you. Free preview in 48 hours, $0 down.",
-    url: "https://nexaflow-brown.vercel.app", // update this later when you get a custom domain
+    url: SITE_URL,
     siteName: "NexaFlow",
     images: [
       {
@@ -105,6 +107,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           <Footer />
           <FloatingConcierge />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

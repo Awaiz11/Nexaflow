@@ -15,9 +15,9 @@ const comparison = [
   { label: "First preview", traditional: "4–8 weeks", ours: "48 hours", icon: Clock3 },
   { label: "Site maintenance", traditional: "Extra fees", ours: "Fully managed", icon: RefreshCw },
   { label: "Contract", traditional: "Lock-in", ours: "Cancel anytime", icon: ShieldCheck },
-  { label: "24/7 Smart Booking Capture", traditional: "Not included", ours: "Always-on", icon: Bot },
-  { label: "Instant WhatsApp Lead Routing", traditional: "Manual only", ours: "< 3 seconds", icon: MessageCircle },
-  { label: "100% Domain & Asset Ownership", traditional: "Agency holds", ours: "You own it all", icon: ShieldCheck },
+  { label: "Booking requests after hours", traditional: "Often missed", ours: "Taken day and night", icon: Bot },
+  { label: "New enquiries", traditional: "Checked by email, later", ours: "Straight to WhatsApp", icon: MessageCircle },
+  { label: "Domain & content ownership", traditional: "Agency holds", ours: "You own it all", icon: ShieldCheck },
 ];
 
 const capabilities = [
@@ -49,7 +49,7 @@ export default function WhyUsPage() {
               <Link href="/themes" className="mt-5 inline-flex items-center gap-2 text-xs font-semibold text-violet-700 dark:text-brass">Explore live themes <ArrowUpRight size={14} /></Link>
             </div>
             <div className="rounded-2xl border border-line bg-[var(--surface)] p-5 sm:p-7">
-              <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-semibold text-muted">Time to useful page</p><div className="mt-3 flex items-baseline gap-2"><span className="text-5xl font-semibold tracking-[-.08em] text-ink">0.7</span><span className="text-sm font-semibold text-violet-700 dark:text-brass">seconds</span></div></div><span className="mb-1 rounded-full border border-violet-500/20 bg-violet-500/[0.06] px-3 py-2 text-xs font-semibold text-violet-700 dark:text-brass">6× faster*</span></div>
+              <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-semibold text-muted">Time to useful page</p><div className="mt-3 flex items-baseline gap-2"><span className="text-5xl font-semibold tracking-[-.08em] text-ink">0.7</span><span className="text-sm font-semibold text-violet-700 dark:text-brass">seconds</span></div></div></div>
               <div className="mt-7 space-y-5">
                 <div><div className="mb-2 flex items-center justify-between text-[13px]"><span className="font-medium text-ink-soft">Traditional small-business site</span><span className="font-mono font-semibold text-muted">4.2s</span></div><div className="h-2.5 overflow-hidden rounded-full bg-paper-deep"><div className="h-full w-[88%] rounded-full bg-line dark:bg-slate-600" /></div></div>
                 <div><div className="mb-2 flex items-center justify-between text-[13px]"><span className="font-medium text-ink-soft">NexaFlow edge build</span><span className="font-mono font-semibold text-violet-700 dark:text-brass">0.7s</span></div><div className="h-2.5 overflow-hidden rounded-full bg-paper-deep"><div className="h-full w-[18%] rounded-full bg-violet-600 shadow-[0_0_14px_rgba(124,58,237,.4)]" /></div></div>
