@@ -84,8 +84,8 @@ const demos: Demo[] = [
     features: ["Interactive layouts", "Premium animations", "Work showcase"],
     key: "portfolio",
     theme: "Creative portfolio",
-    image: "https://image.thum.io/get/width/1000/crop/700/https://portfolio1-hazel-seven.vercel.app/",
-    src: "https://image.thum.io/get/width/1000/crop/700/https://portfolio1-hazel-seven.vercel.app/",
+    image: "/portfolio-shot.jpg",
+    src: "/portfolio-shot.jpg",
   },
   {
     name: "Chicago's Pizza Factory",
@@ -99,8 +99,8 @@ const demos: Demo[] = [
     features: ["Visual menu", "Instant booking", "Location & hours"],
     key: "chicago",
     theme: "Pizza & dining",
-    image: "https://image.thum.io/get/width/1000/crop/700/https://chicago-s.vercel.app/",
-    src: "https://image.thum.io/get/width/1000/crop/700/https://chicago-s.vercel.app/",
+    image: "/chicago-shot.jpg",
+    src: "/chicago-shot.jpg",
   },
   {
     name: "Palau Premium",
