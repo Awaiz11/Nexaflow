@@ -22,21 +22,21 @@ export function NexaFlowLogo({
       >
         <Image
           src="/icon-512.png"
-          alt="NexaFlow NF Emblem"
+          alt=""
           width={size * 2}
           height={size * 2}
           priority
-          className="h-full w-full object-contain drop-shadow-[0_2px_10px_rgba(37,99,235,0.25)]"
+          className="h-full w-full object-contain"
         />
       </div>
 
       {/* 'NexaFlow' Wordmark */}
       {showWordmark && (
         <span
-          className={`flex items-baseline font-bold tracking-tight text-[#09091B] dark:text-white ${textSize}`}
+          className={`flex items-baseline font-bold tracking-tight text-ink ${textSize}`}
         >
           <span>Nexa</span>
-          <span className="bg-gradient-to-r from-blue-500 via-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <span className="text-brand">
             Flow
           </span>
         </span>

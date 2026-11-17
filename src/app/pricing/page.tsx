@@ -45,50 +45,49 @@ export default function PricingPage() {
 
   return (
     <div className="relative isolate overflow-hidden">
-      <div aria-hidden="true" className="pointer-events-none absolute left-1/2 top-28 -z-10 h-96 w-96 -translate-x-1/2 rounded-full bg-violet-500/[0.08] blur-[110px] dark:hidden" />
       <section className="mx-auto max-w-7xl px-5 pb-12 pt-20 text-center sm:px-8 sm:pt-24">
         <Reveal>
-          <div className="mx-auto inline-flex items-center gap-2 rounded-full border border-violet-200/80 bg-white/75 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[.16em] text-violet-700 dark:border-violet-400/20 dark:bg-white/[0.04] dark:text-violet-300"><Sparkles size={13} /> Straightforward by design</div>
-          <h1 className="mx-auto mt-7 max-w-4xl text-[clamp(2.7rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-.07em] text-slate-950 dark:text-white">Your next website.<br /><span className="text-violet-600 dark:text-violet-400">No giant invoice attached.</span></h1>
-          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-slate-600 dark:text-slate-400">A complete website partnership, for less than a daily coffee run. Choose a plan that fits where your business is going.</p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-[10px] font-medium text-slate-500 dark:text-slate-400"><span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200/60 bg-white/70 px-3 py-2 dark:border-violet-500/20 dark:bg-white/[0.03]"><Check size={12} className="text-violet-600 dark:text-violet-400" />$0 down</span><span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200/60 bg-white/70 px-3 py-2 dark:border-violet-500/20 dark:bg-white/[0.03]"><Check size={12} className="text-violet-600 dark:text-violet-400" />No long contracts</span><span className="inline-flex items-center gap-1.5 rounded-full border border-violet-200/60 bg-white/70 px-3 py-2 dark:border-violet-500/20 dark:bg-white/[0.03]"><Check size={12} className="text-violet-600 dark:text-violet-400" />Hosting & care included</span></div>
+          
+          <h1 className="mx-auto mt-7 max-w-4xl text-[clamp(2.7rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-.07em] text-ink">Your next website.<br /><span>No giant invoice attached.</span></h1>
+          <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-ink-soft">A complete website partnership, for less than a daily coffee run. Choose a plan that fits where your business is going.</p>
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-xs font-medium text-muted"><span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-[var(--surface)] px-3 py-2"><Check size={12} className="text-violet-600 dark:text-brass" />$0 down</span><span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-[var(--surface)] px-3 py-2"><Check size={12} className="text-violet-600 dark:text-brass" />No long contracts</span><span className="inline-flex items-center gap-1.5 rounded-full border border-line bg-[var(--surface)] px-3 py-2"><Check size={12} className="text-violet-600 dark:text-brass" />Hosting & care included</span></div>
         </Reveal>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-16 sm:px-8 lg:pb-20">
         <div className="grid items-stretch gap-5 lg:grid-cols-3">
           {plans.map((plan, index) => <Reveal key={plan.name} delay={index * 0.07} className="h-full">
-            <article className={`relative flex h-full flex-col rounded-[27px] p-[1px] ${plan.highlighted ? "pricing-featured" : "border border-violet-200/70 bg-white/90 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl dark:border-violet-500/20 dark:bg-[#0B091B]/85 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)]"}`}>
+            <article className={`relative flex h-full flex-col rounded-[27px] p-[1px] ${plan.highlighted ? "pricing-featured" : "border border-line bg-[var(--surface)]"}`}>
               {plan.highlighted && <motion.div aria-hidden="true" className="absolute -inset-[1px] rounded-[28px] bg-gradient-to-br from-indigo-500 via-violet-500 to-purple-400 opacity-80 blur-[1px] dark:from-violet-500 dark:via-indigo-500 dark:to-purple-400" animate={{ opacity: [0.5, 0.95, 0.5] }} transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }} />}
-              <div className={`relative flex h-full flex-col rounded-[26px] p-6 sm:p-7 ${plan.highlighted ? "bg-white/95 dark:bg-[#0B091B]/95" : ""}`}>
-                <div className="flex items-start justify-between gap-3"><div><p className={`text-[10px] font-bold uppercase tracking-[.16em] ${plan.highlighted ? "text-violet-700 dark:text-violet-300" : "text-slate-500 dark:text-slate-400"}`}>{plan.name}</p><p className="mt-2 max-w-[270px] text-xs leading-5 text-slate-600 dark:text-slate-400">{plan.description}</p></div>{plan.highlighted && <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-violet-600 px-2.5 py-1.5 text-[8px] font-bold text-white dark:bg-violet-600 dark:text-white"><Star size={10} fill="currentColor" /> Most popular</span>}</div>
-                <div className="mt-7 flex items-end gap-1"><span className="text-5xl font-semibold tracking-[-.08em] text-slate-950 dark:text-white">{plan.price}</span><span className="mb-1.5 text-xs font-medium text-slate-500 dark:text-slate-400">/ month</span></div>
+              <div className={`relative flex h-full flex-col rounded-[26px] p-6 sm:p-7 ${plan.highlighted ? "bg-[var(--surface)]" : ""}`}>
+                <div className="flex items-start justify-between gap-3"><div><p className={`text-xs font-bold ${plan.highlighted ? "text-violet-700 dark:text-brass" : "text-muted"}`}>{plan.name}</p><p className="mt-2 max-w-[270px] text-xs leading-5 text-ink-soft">{plan.description}</p></div>{plan.highlighted && <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-violet-600 px-2.5 py-1.5 text-[11px] font-bold text-white dark:bg-violet-600"><Star size={10} fill="currentColor" /> Most popular</span>}</div>
+                <div className="mt-7 flex items-end gap-1"><span className="font-display text-5xl font-normal text-ink">{plan.price}</span><span className="mb-1.5 text-xs font-medium text-muted">/ month</span></div>
                 <div className="mt-4 h-px bg-violet-200/60 dark:bg-violet-500/20" />
-                <p className="mt-5 text-[9px] font-bold uppercase tracking-[.15em] text-slate-400">Included in your plan</p>
-                <ul className="mt-4 flex-1 space-y-3.5">{plan.features.map((feature) => <li key={feature} className="flex items-start gap-2.5 text-[11px] text-slate-700 dark:text-slate-300"><span className={`mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full ${plan.highlighted ? "bg-violet-500/10 text-violet-700 dark:text-violet-300" : "bg-slate-100 text-slate-600 dark:bg-white/[0.06] dark:text-slate-300"}`}><Check size={10} /></span>{feature}</li>)}</ul>
-                <Link href="/contact" className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full px-4 py-3.5 text-xs font-semibold shadow-md transition-all ${plan.highlighted ? "bg-[#09091B] text-white hover:bg-[#181832] dark:bg-white dark:text-[#09091B] dark:shadow-lg dark:shadow-white/10 dark:hover:bg-violet-50" : "border border-violet-200/70 bg-white text-slate-800 hover:border-violet-300 hover:bg-violet-50/50 dark:border-violet-500/20 dark:bg-white/[0.03] dark:text-slate-200 dark:hover:border-violet-400/30 dark:hover:bg-white/[0.06]"}`}>{plan.cta} <ArrowRight size={14} /></Link>
-                <p className="mt-3 text-center text-[9px] text-slate-400">$0 upfront · Cancel anytime</p>
+                <p className="mt-5 text-xs font-bold text-muted">Included in your plan</p>
+                <ul className="mt-4 flex-1 space-y-3.5">{plan.features.map((feature) => <li key={feature} className="flex items-start gap-2.5 text-[13px] text-ink-soft"><span className={`mt-0.5 grid h-4 w-4 shrink-0 place-items-center rounded-full ${plan.highlighted ? "bg-violet-500/10 text-violet-700 dark:text-brass" : "bg-paper-deep text-ink-soft"}`}><Check size={10} /></span>{feature}</li>)}</ul>
+                <Link href="/contact" className={`mt-7 inline-flex items-center justify-center gap-2 rounded-full px-4 py-3.5 text-xs font-semibold shadow-md transition-all ${plan.highlighted ? "bg-brand text-brand-ink hover:opacity-90" : "border border-line bg-[var(--surface)] text-ink-soft hover:border-ink-soft hover:bg-paper-deep"}`}>{plan.cta} <ArrowRight size={14} /></Link>
+                <p className="mt-3 text-center text-xs text-muted">$0 upfront · Cancel anytime</p>
               </div>
             </article>
           </Reveal>)}
         </div>
-        <p className="mt-5 text-center text-[9px] leading-5 text-slate-400">All prices in USD. Third-party services, payment processing and custom scopes may be quoted separately before you commit.</p>
+        <p className="mt-5 text-center text-xs leading-5 text-muted">All prices in USD. Third-party services, payment processing and custom scopes may be quoted separately before you commit.</p>
       </section>
 
       <section className="mx-auto max-w-4xl px-5 py-12 sm:px-8 lg:py-20">
         <Reveal>
-          <div className="mb-7 text-center"><div className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-violet-500/10 text-violet-700 dark:bg-violet-500/20 dark:text-violet-300"><HelpCircle size={18} /></div><h2 className="mt-4 text-3xl font-semibold tracking-[-.055em] text-slate-950 dark:text-white">Good questions. Clear answers.</h2><p className="mt-2 text-xs text-slate-500 dark:text-slate-400">Everything you need to know before you say yes.</p></div>
+          <div className="mb-7 text-center"><div className="mx-auto grid h-10 w-10 place-items-center rounded-xl bg-violet-500/10 text-violet-700 dark:bg-violet-500/20 dark:text-brass"><HelpCircle size={18} /></div><h2 className="mt-4 text-3xl font-semibold tracking-[-.055em] text-ink">Good questions. Clear answers.</h2><p className="mt-2 text-xs text-muted">Everything you need to know before you say yes.</p></div>
         </Reveal>
         <Reveal delay={0.06}>
-          <div className="overflow-hidden rounded-[24px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)]">
+          <div className="overflow-hidden rounded-[24px] bg-[var(--surface)] border border-line">
             {faqs.map((faq, index) => {
               const isOpen = openFaq === index;
               const triggerId = `faq-trigger-${index}`;
               const panelId = `faq-panel-${index}`;
               return <div key={faq.question} className={index < faqs.length - 1 ? "border-b border-violet-200/60 dark:border-violet-500/15" : ""}>
-                <h3><button id={triggerId} type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenFaq(isOpen ? null : index)} className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-6"><span className="text-xs font-semibold text-slate-900 dark:text-white">{faq.question}</span><span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full transition-colors ${isOpen ? "bg-violet-600 text-white dark:bg-violet-600 dark:text-white" : "bg-slate-100 text-slate-500 dark:bg-white/[0.05] dark:text-slate-400"}`}>{isOpen ? <Minus size={13} /> : <Plus size={13} />}</span></button></h3>
+                <h3><button id={triggerId} type="button" aria-expanded={isOpen} aria-controls={panelId} onClick={() => setOpenFaq(isOpen ? null : index)} className="flex w-full items-center justify-between gap-5 px-5 py-5 text-left sm:px-6"><span className="text-xs font-semibold text-ink">{faq.question}</span><span className={`grid h-7 w-7 shrink-0 place-items-center rounded-full transition-colors ${isOpen ? "bg-violet-600 text-white dark:bg-violet-600" : "bg-paper-deep text-muted"}`}>{isOpen ? <Minus size={13} /> : <Plus size={13} />}</span></button></h3>
                 <AnimatePresence initial={false}>
-                  {isOpen && <motion.div id={panelId} role="region" aria-labelledby={triggerId} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.28, ease: "easeInOut" }} className="overflow-hidden"><p className="max-w-3xl px-5 pb-5 pr-14 text-xs leading-6 text-slate-600 sm:px-6 sm:pr-20 dark:text-slate-400">{faq.answer}</p></motion.div>}
+                  {isOpen && <motion.div id={panelId} role="region" aria-labelledby={triggerId} initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.28, ease: "easeInOut" }} className="overflow-hidden"><p className="max-w-3xl px-5 pb-5 pr-14 text-xs leading-6 text-ink-soft sm:px-6 sm:pr-20">{faq.answer}</p></motion.div>}
                 </AnimatePresence>
               </div>;
             })}
@@ -96,7 +95,7 @@ export default function PricingPage() {
         </Reveal>
       </section>
 
-      <section className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 lg:pb-32"><Reveal><div className="relative overflow-hidden rounded-[28px] bg-[#09091B] px-7 py-9 text-white sm:px-10 sm:py-10 border border-violet-500/20 shadow-2xl shadow-violet-950/30 dark:bg-[#070514] dark:border dark:border-violet-500/25"><div className="absolute -right-12 -top-28 h-72 w-72 rounded-full bg-violet-600/25 blur-[80px]" /><div className="relative flex flex-col justify-between gap-6 sm:flex-row sm:items-center"><div><p className="text-[9px] font-bold uppercase tracking-[.2em] text-violet-300">Start with a preview</p><h2 className="mt-2 text-2xl font-semibold tracking-[-.05em]">See your business in a new light.</h2><p className="mt-2 text-xs text-slate-300">No payment details. Just a thoughtful first look.</p></div><Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-5 py-3.5 text-xs font-semibold text-[#09091B] shadow-lg shadow-white/10 transition-colors hover:bg-violet-50">Get my free preview <ArrowUpRight size={14} /></Link></div></div></Reveal></section>
+      <section className="mx-auto max-w-7xl px-5 pb-24 pt-10 sm:px-8 lg:pb-32"><Reveal><div className="relative overflow-hidden rounded-[28px] bg-[#1f4d3b] px-7 py-9 text-white sm:px-10 sm:py-10"><div className="relative flex flex-col justify-between gap-6 sm:flex-row sm:items-center"><div><p className="text-xs font-bold text-violet-300">Start with a preview</p><h2 className="mt-2 text-2xl font-semibold tracking-[-.05em]">See your business in a new light.</h2><p className="mt-2 text-xs text-slate-300">No payment details. Just a thoughtful first look.</p></div><Link href="/contact" className="inline-flex items-center justify-center gap-2 rounded-full bg-[#f5f1e9] px-5 py-3.5 text-xs font-semibold text-[#0b0b0a] transition-colors hover:opacity-90">Get my free preview <ArrowUpRight size={14} /></Link></div></div></Reveal></section>
     </div>
   );
 }

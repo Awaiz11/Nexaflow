@@ -186,9 +186,9 @@ function ThemePreview({ demo }: { demo: Demo }) {
       <div className="absolute -right-8 -top-12 h-48 w-48 rounded-full bg-amber-700/30 blur-3xl" />
       <div className="absolute bottom-0 right-0 h-[70%] w-[53%] rounded-tl-[90px] bg-gradient-to-br from-[#a36843] via-[#51372e] to-[#171312] opacity-80" />
       <div className="absolute bottom-6 right-6 h-28 w-20 rotate-[-9deg] rounded-[14px] border border-white/20 bg-gradient-to-b from-amber-200/50 to-rose-950/80 shadow-2xl" />
-      <div className="relative flex items-center justify-between"><span className="text-[9px] font-bold tracking-[.24em] text-amber-100">LE ROCHER</span><span className="text-[8px] text-white/60">MENU &nbsp; VISIT</span></div>
-      <div className="relative mt-11 max-w-[195px]"><p className="text-[8px] uppercase tracking-[.2em] text-amber-200/80">A table worth lingering at</p><h3 className="mt-2 font-serif text-[27px] leading-[1.02] tracking-[-.05em]">Dinner, with a little more <i>indulgence.</i></h3><p className="mt-2 text-[8px] text-white/60">Seasonal plates. Considered cocktails. Your evening starts here.</p><span className="mt-4 inline-flex items-center gap-2 border border-amber-100/40 px-3 py-2 text-[8px] font-semibold uppercase tracking-[.14em]">Reserve a table <ArrowUpRight size={9} /></span></div>
-      <div className="absolute bottom-3 left-5 text-[7px] tracking-[.16em] text-white/40">48 RUE DE LA PAIX · PARIS</div>
+      <div className="relative flex items-center justify-between"><span className="text-xs font-bold text-amber-100">LE ROCHER</span><span className="text-[11px] text-white/60">MENU &nbsp; VISIT</span></div>
+      <div className="relative mt-11 max-w-[195px]"><p className="text-[11px] text-amber-200/80">A table worth lingering at</p><h3 className="mt-2 font-serif text-[27px] leading-[1.02] tracking-[-.05em]">Dinner, with a little more <i>indulgence.</i></h3><p className="mt-2 text-[11px] text-white/60">Seasonal plates. Considered cocktails. Your evening starts here.</p><span className="mt-4 inline-flex items-center gap-2 border border-amber-100/40 px-3 py-2 text-[11px] font-semibold">Reserve a table <ArrowUpRight size={9} /></span></div>
+      <div className="absolute bottom-3 left-5 text-[10px] text-white/40">48 RUE DE LA PAIX · PARIS</div>
     </div>;
   }
   if (demo.key === "bloom") {
@@ -196,9 +196,9 @@ function ThemePreview({ demo }: { demo: Demo }) {
       <div className="absolute -right-8 top-9 h-40 w-40 rounded-full bg-[#e6aa91]/65 blur-[1px]" />
       <div className="absolute bottom-0 right-0 h-[78%] w-[58%] rounded-tl-[120px] bg-gradient-to-br from-[#d1b7a2] via-[#efc7ad] to-[#fbddd0]" />
       <div className="absolute bottom-4 right-7 h-32 w-24 rounded-[48%_48%_42%_42%] bg-[#8e715a]/70 shadow-xl"><span className="absolute left-2 top-[-10px] h-12 w-7 -rotate-12 rounded-[60%_50%_55%_50%] bg-[#8e715a]" /><span className="absolute right-2 top-[-10px] h-12 w-7 rotate-12 rounded-[50%_60%_50%_55%] bg-[#8e715a]" /><span className="absolute left-1/2 top-14 h-2 w-2 -translate-x-1/2 rounded-full bg-[#42382f]" /></div>
-      <div className="relative flex items-center justify-between"><span className="text-[9px] font-black tracking-[-.04em]">bloom <i className="font-serif font-normal">& bark</i></span><span className="text-[8px] font-semibold">SERVICES &nbsp; BOOK</span></div>
-      <div className="relative mt-11 max-w-[195px]"><p className="text-[8px] font-bold uppercase tracking-[.17em] text-[#728273]">Good hair days, for every kind</p><h3 className="mt-2 font-serif text-[30px] leading-[.98] tracking-[-.06em]">A little <i>freshen up</i> goes a long way.</h3><p className="mt-2 text-[8px] text-[#67736b]">Kind hands. Clean coats. Very happy tails.</p><span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#314f40] px-3.5 py-2 text-[8px] font-semibold text-white">Book your pup <ArrowUpRight size={9} /></span></div>
-      <div className="absolute bottom-3 left-5 text-[7px] font-bold tracking-[.15em] text-[#78877e]">LOVE, CARE & A LITTLE BOW</div>
+      <div className="relative flex items-center justify-between"><span className="text-xs font-black tracking-[-.04em]">bloom <i className="font-serif font-normal">& bark</i></span><span className="text-[11px] font-semibold">SERVICES &nbsp; BOOK</span></div>
+      <div className="relative mt-11 max-w-[195px]"><p className="text-[11px] font-bold text-[#728273]">Good hair days, for every kind</p><h3 className="mt-2 font-serif text-[30px] leading-[.98] tracking-[-.06em]">A little <i>freshen up</i> goes a long way.</h3><p className="mt-2 text-[11px] text-[#67736b]">Kind hands. Clean coats. Very happy tails.</p><span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#314f40] px-3.5 py-2 text-[11px] font-semibold text-white">Book your pup <ArrowUpRight size={9} /></span></div>
+      <div className="absolute bottom-3 left-5 text-[10px] font-bold text-[#78877e]">LOVE, CARE & A LITTLE BOW</div>
     </div>;
   }
   if (demo.key === "serene") {
@@ -206,17 +206,17 @@ function ThemePreview({ demo }: { demo: Demo }) {
       <div className="absolute -right-4 -top-12 h-48 w-48 rounded-full border border-[#7e9681]/20" /><div className="absolute right-9 top-5 h-44 w-44 rounded-full border border-[#7e9681]/20" />
       <div className="absolute bottom-[-35px] right-8 h-44 w-32 rounded-t-[70px] bg-gradient-to-b from-[#c3cdbd] to-[#7f9587] opacity-80" />
       <div className="absolute right-[88px] top-[89px] h-24 w-24 rounded-full bg-[#d8bb8e]/70 blur-[1px]" />
-      <div className="relative flex items-center justify-between"><span className="text-[9px] font-semibold tracking-[.24em]">SERENE</span><span className="text-[8px] text-[#73837a]">STUDIO &nbsp; CLASSES</span></div>
-      <div className="relative mt-11 max-w-[200px]"><p className="text-[8px] uppercase tracking-[.2em] text-[#778a7c]">Space to come back to yourself</p><h3 className="mt-2 font-serif text-[30px] leading-[.98] tracking-[-.06em]">Make room for <i>stillness.</i></h3><p className="mt-2 text-[8px] text-[#697a71]">Mindful movement. A softer pace. Your first class is on us.</p><span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#365449] px-3.5 py-2 text-[8px] font-semibold text-white">Explore the studio <ArrowUpRight size={9} /></span></div>
-      <div className="absolute bottom-3 left-5 text-[7px] tracking-[.18em] text-[#7d8f84]">BREATHE IN · LET GO</div>
+      <div className="relative flex items-center justify-between"><span className="text-xs font-semibold">SERENE</span><span className="text-[11px] text-[#73837a]">STUDIO &nbsp; CLASSES</span></div>
+      <div className="relative mt-11 max-w-[200px]"><p className="text-[11px] text-[#778a7c]">Space to come back to yourself</p><h3 className="mt-2 font-serif text-[30px] leading-[.98] tracking-[-.06em]">Make room for <i>stillness.</i></h3><p className="mt-2 text-[11px] text-[#697a71]">Mindful movement. A softer pace. Your first class is on us.</p><span className="mt-4 inline-flex items-center gap-2 rounded-full bg-[#365449] px-3.5 py-2 text-[11px] font-semibold text-white">Explore the studio <ArrowUpRight size={9} /></span></div>
+      <div className="absolute bottom-3 left-5 text-[10px] text-[#7d8f84]">BREATHE IN · LET GO</div>
     </div>;
   }
   return <div className="relative h-full min-h-[245px] overflow-hidden bg-[#eef1f6] p-5 text-[#15223c] sm:p-6 dark:bg-[#e9edf4]">
-    <div className="relative flex items-center justify-between"><span className="text-[9px] font-bold tracking-[-.02em]">ledgerly<span className="text-violet-600">.</span></span><span className="text-[8px] text-[#60708a]">SOLUTIONS &nbsp; INSIGHTS</span></div>
-    <div className="relative mt-8 max-w-[210px]"><p className="text-[8px] font-semibold uppercase tracking-[.16em] text-violet-700">A clearer view of your next move</p><h3 className="mt-2 text-[27px] font-semibold leading-[1.02] tracking-[-.065em]">Make your money work <span className="text-violet-600">smarter.</span></h3><p className="mt-2 text-[8px] text-[#64728a]">Modern guidance for the goals you’re actually building toward.</p></div>
-    <div className="absolute bottom-4 right-5 w-[38%] rounded-xl border border-white bg-white/85 p-3 shadow-lg shadow-slate-900/10"><div className="flex items-center justify-between text-[7px] text-[#69768b]"><span>Portfolio health</span><span className="text-violet-600 font-semibold">+8.4%</span></div><div className="mt-2 flex h-10 items-end gap-1">{[35, 46, 39, 61, 55, 74, 83, 71, 95].map((height, index) => <span key={index} style={{ height: `${height}%` }} className="flex-1 rounded-t-sm bg-violet-500/70" />)}</div></div>
-    <div className="relative mt-4 inline-flex items-center gap-1.5 rounded-md bg-[#172847] px-3 py-2 text-[8px] font-semibold text-white">Start a conversation <ArrowUpRight size={9} /></div>
-    <div className="absolute bottom-3 left-5 text-[7px] font-bold tracking-[.16em] text-[#6f7c92]">CLARITY IN EVERY DECISION</div>
+    <div className="relative flex items-center justify-between"><span className="text-xs font-bold tracking-[-.02em]">ledgerly<span className="text-violet-600">.</span></span><span className="text-[11px] text-[#60708a]">SOLUTIONS &nbsp; INSIGHTS</span></div>
+    <div className="relative mt-8 max-w-[210px]"><p className="text-[11px] font-semibold text-violet-700">A clearer view of your next move</p><h3 className="mt-2 text-[27px] font-semibold leading-[1.02] tracking-[-.065em]">Make your money work <span className="text-violet-600">smarter.</span></h3><p className="mt-2 text-[11px] text-[#64728a]">Modern guidance for the goals you’re actually building toward.</p></div>
+    <div className="absolute bottom-4 right-5 w-[38%] rounded-xl border border-white bg-[var(--surface)] p-3 shadow-lg"><div className="flex items-center justify-between text-[10px] text-[#69768b]"><span>Portfolio health</span><span className="text-violet-600 font-semibold">+8.4%</span></div><div className="mt-2 flex h-10 items-end gap-1">{[35, 46, 39, 61, 55, 74, 83, 71, 95].map((height, index) => <span key={index} style={{ height: `${height}%` }} className="flex-1 rounded-t-sm bg-violet-500/70" />)}</div></div>
+    <div className="relative mt-4 inline-flex items-center gap-1.5 rounded-md bg-[#172847] px-3 py-2 text-[11px] font-semibold text-white">Start a conversation <ArrowUpRight size={9} /></div>
+    <div className="absolute bottom-3 left-5 text-[10px] font-bold text-[#6f7c92]">CLARITY IN EVERY DECISION</div>
   </div>;
 }
 
@@ -229,17 +229,17 @@ export default function ThemesPage() {
       <section className="mx-auto max-w-7xl px-5 pb-12 pt-20 sm:px-8 sm:pt-24">
         <Reveal>
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
-            <div className="max-w-2xl"><div className="inline-flex items-center gap-2 rounded-full border border-violet-200/80 bg-white/75 px-3.5 py-2 text-[10px] font-bold uppercase tracking-[.16em] text-violet-700 dark:border-violet-400/20 dark:bg-white/[0.04] dark:text-violet-300"><LayoutTemplate size={13} /> Made to fit your world</div><h1 className="mt-7 text-[clamp(2.7rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-.07em] text-slate-950 dark:text-white">Distinctive by design.<br /><span className="text-violet-600 dark:text-violet-400">Fast by default.</span></h1><p className="mt-5 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-400">A few live directions for the businesses people love to find. Each one is responsive, booking-ready and built to make the next step obvious.</p></div>
-            <div className="flex items-center gap-3 rounded-2xl border border-violet-200/60 bg-white/70 p-3.5 dark:border-violet-500/20 dark:bg-white/[0.035]"><span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-500/10 text-violet-700 dark:text-violet-300"><Gauge size={18} /></span><div><p className="text-[11px] font-semibold text-slate-950 dark:text-white">99/100 PageSpeed</p><p className="mt-0.5 text-[9px] text-slate-500 dark:text-slate-400">A fast, frictionless starting point</p></div><Sparkles size={14} className="ml-2 text-violet-500 dark:text-violet-300" /></div>
+            <div className="max-w-2xl"><h1 className="mt-7 text-[clamp(2.7rem,6vw,5rem)] font-semibold leading-[1.02] tracking-[-.07em] text-ink">Distinctive by design.<br /><span>Fast by default.</span></h1><p className="mt-5 max-w-xl text-base leading-7 text-ink-soft">A few live directions for the businesses people love to find. Each one is responsive, booking-ready and built to make the next step obvious.</p></div>
+            <div className="flex items-center gap-3 rounded-2xl border border-line bg-[var(--surface)] p-3.5"><span className="grid h-10 w-10 place-items-center rounded-xl bg-violet-500/10 text-violet-700 dark:text-brass"><Gauge size={18} /></span><div><p className="text-[13px] font-semibold text-ink">99/100 PageSpeed</p><p className="mt-0.5 text-xs text-muted">A fast, frictionless starting point</p></div><Sparkles size={14} className="ml-2 text-violet-500 dark:text-brass" /></div>
           </div>
         </Reveal>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 pb-24 sm:px-8 lg:pb-32">
         <Reveal delay={0.08}>
-          <div className="flex flex-wrap items-center gap-2 border-b border-violet-200/60 pb-5 dark:border-violet-500/20" role="tablist" aria-label="Filter website themes">
-            {categories.map((category) => <button key={category} type="button" role="tab" aria-selected={activeCategory === category} onClick={() => setActiveCategory(category)} className={`relative rounded-full px-4 py-2.5 text-[11px] font-semibold transition-colors ${activeCategory === category ? "text-white dark:text-slate-950" : "text-slate-600 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-white/[0.05]"}`}>
-              {activeCategory === category && <motion.span layoutId="theme-filter" className="absolute inset-0 -z-0 rounded-full bg-[#09091B] dark:bg-white" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}
+          <div className="flex flex-wrap items-center gap-2 border-b border-line pb-5" role="tablist" aria-label="Filter website themes">
+            {categories.map((category) => <button key={category} type="button" role="tab" aria-selected={activeCategory === category} onClick={() => setActiveCategory(category)} className={`relative rounded-full px-4 py-2.5 text-[13px] font-semibold transition-colors ${activeCategory === category ? "text-brand-ink" : "text-ink-soft hover:bg-paper-deep"}`}>
+              {activeCategory === category && <motion.span layoutId="theme-filter" className="absolute inset-0 -z-0 rounded-full bg-brand" transition={{ type: "spring", stiffness: 400, damping: 32 }} />}
               <span className="relative z-10">{category}</span>
             </button>)}
           </div>
@@ -247,33 +247,33 @@ export default function ThemesPage() {
 
         <motion.div layout className="mt-7 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
-            {filtered.map((demo, index) => <motion.article key={demo.key} layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 14 }} transition={{ duration: 0.32, delay: index * 0.035 }} className="group min-w-0 max-w-full overflow-hidden rounded-[27px] bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl hover:shadow-violet-950/[0.06] dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)] dark:hover:border-violet-400/40">
+            {filtered.map((demo, index) => <motion.article key={demo.key} layout initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 14 }} transition={{ duration: 0.32, delay: index * 0.035 }} className="group min-w-0 max-w-full overflow-hidden rounded-[27px] bg-[var(--surface)] border border-line transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/40 hover:shadow-xl">
               <div className="relative overflow-hidden">
                 <ThemePreview demo={demo} />
-                <div className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-slate-950/75 px-2.5 py-1.5 text-[9px] font-bold text-white shadow-lg backdrop-blur-xl">
+                <div className="absolute right-3 top-3 z-10 inline-flex items-center gap-1.5 rounded-full border border-white/30 bg-slate-950/75 px-2.5 py-1.5 text-xs font-bold text-white shadow-lg">
                   <Gauge size={11} className="text-violet-300" /> 99/100
                 </div>
               </div>
               <div className="p-5 sm:p-6 min-w-0 overflow-hidden">
                 <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start min-w-0">
                   <div className="min-w-0 flex-1">
-                    <p className="text-[9px] font-bold uppercase tracking-[.16em] text-violet-600 dark:text-violet-400 truncate">{demo.category}</p>
-                    <h2 className="mt-1.5 text-xl font-semibold tracking-[-.045em] text-slate-950 dark:text-white truncate">{demo.name || demo.title}</h2>
-                    <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 line-clamp-1">{demo.descriptor || demo.description}</p>
+                    <p className="text-xs font-bold text-violet-600 dark:text-brass truncate">{demo.category}</p>
+                    <h2 className="mt-1.5 text-xl font-semibold tracking-[-.045em] text-ink truncate">{demo.name || demo.title}</h2>
+                    <p className="mt-1 text-xs text-muted line-clamp-1">{demo.descriptor || demo.description}</p>
                   </div>
-                  <span className="w-fit shrink-0 rounded-full border border-violet-200/60 px-2.5 py-1.5 text-[9px] font-semibold text-slate-500 dark:border-violet-500/20 dark:text-slate-400">{demo.theme}</span>
+                  <span className="w-fit shrink-0 rounded-full border border-line px-2.5 py-1.5 text-xs font-semibold text-muted">{demo.theme}</span>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-1.5">{(demo.tags || demo.features || []).map((tag) => <span key={tag} className="inline-flex items-center gap-1 rounded-full bg-violet-50/70 px-2.5 py-1.5 text-[9px] font-medium text-slate-700 dark:bg-white/[0.05] dark:text-slate-300"><Check size={10} className="text-violet-600 dark:text-violet-400" />{tag}</span>)}</div>
+                <div className="mt-4 flex flex-wrap gap-1.5">{(demo.tags || demo.features || []).map((tag) => <span key={tag} className="inline-flex items-center gap-1 rounded-full bg-paper-deep px-2.5 py-1.5 text-xs font-medium text-ink-soft"><Check size={10} className="text-violet-600 dark:text-brass" />{tag}</span>)}</div>
                 <a
                   href={demo.url || demo.liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-5 flex items-center justify-between gap-3 min-w-0 max-w-full overflow-hidden rounded-xl border border-violet-200/60 px-4 py-3 text-[11px] font-semibold text-slate-800 transition-all hover:border-violet-500/30 hover:bg-violet-50/60 hover:text-violet-700 dark:border-white/10 dark:text-slate-200 dark:hover:border-violet-400/30 dark:hover:bg-violet-400/[0.05] dark:hover:text-violet-300"
+                  className="mt-5 flex items-center justify-between gap-3 min-w-0 max-w-full overflow-hidden rounded-xl border border-line px-4 py-3 text-[13px] font-semibold text-ink-soft transition-all hover:border-violet-500/30 hover:bg-paper-deep hover:text-violet-700 dark:hover:bg-violet-400/[0.05] dark:hover:text-ink"
                 >
                   <span className="inline-flex shrink-0 items-center gap-2">
                     Launch live demo <ExternalLink size={13} className="shrink-0" />
                   </span>
-                  <span className="min-w-0 max-w-[55%] truncate overflow-hidden text-ellipsis font-mono text-[9px] font-medium text-slate-400 text-right">
+                  <span className="min-w-0 max-w-[55%] truncate overflow-hidden text-ellipsis font-mono text-xs font-medium text-muted text-right">
                     {new URL(demo.url || demo.liveLink || "").hostname}
                   </span>
                 </a>
@@ -281,7 +281,7 @@ export default function ThemesPage() {
             </motion.article>)}
           </AnimatePresence>
         </motion.div>
-        <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl bg-white/90 border border-violet-200/70 shadow-[0_8px_30px_rgb(124,58,237,0.06)] backdrop-blur-xl px-5 py-4 text-center sm:flex-row sm:text-left dark:bg-[#0B091B]/85 dark:border-violet-500/20 dark:shadow-[0_8px_30px_rgb(109,40,217,0.12)]"><p className="text-xs text-slate-600 dark:text-slate-400">Your business isn’t a template. These are just the starting points.</p><Link href="/contact" className="inline-flex items-center gap-2 text-xs font-semibold text-violet-700 dark:text-violet-300">Get a custom 48-hour preview <ArrowUpRight size={14} /></Link></div>
+        <div className="mt-10 flex flex-col items-center justify-between gap-4 rounded-2xl bg-[var(--surface)] border border-line px-5 py-4 text-center sm:flex-row sm:text-left"><p className="text-xs text-ink-soft">Your business isn’t a template. These are just the starting points.</p><Link href="/contact" className="inline-flex items-center gap-2 text-xs font-semibold text-violet-700 dark:text-brass">Get a custom 48-hour preview <ArrowUpRight size={14} /></Link></div>
       </section>
     </div>
   );

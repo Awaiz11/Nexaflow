@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
-import { Plus_Jakarta_Sans } from "next/font/google";
+import { Newsreader, Schibsted_Grotesk } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { FloatingConcierge } from "@/components/FloatingConcierge";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
+const sans = Schibsted_Grotesk({ subsets: ["latin"], variable: "--nf-sans" });
+const display = Newsreader({ subsets: ["latin"], variable: "--nf-display", style: ["normal", "italic"], axes: ["opsz"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexaflow-brown.vercel.app"),
-  title: "NexaFlow | Website-as-a-Service for Local Businesses",
-  description: "Turn Google Maps & local searches into booked revenue automatically. Zero upfront cost, $0 down. Get a custom, high-converting website managed for you.",
+  title: "NexaFlow | Websites for local businesses",
+  description: "NexaFlow designs, launches and looks after websites for restaurants, salons, studios and shops. See a free preview of yours in 48 hours. $0 down, cancel anytime.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "NexaFlow | Website-as-a-Service",
-    description: "Turn Google Maps & local searches into booked revenue automatically. Zero upfront cost.",
+    title: "NexaFlow | Websites for local businesses",
+    description: "Websites for local businesses, built and looked after for you. Free preview in 48 hours, $0 down.",
     url: "https://nexaflow-brown.vercel.app", // update this later when you get a custom domain
     siteName: "NexaFlow",
     images: [
@@ -32,14 +33,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "NexaFlow | Website-as-a-Service",
-    description: "Zero upfront cost, $0 down. Get a custom, high-converting website managed for you.",
+    title: "NexaFlow | Websites for local businesses",
+    description: "Websites for local businesses, built and looked after for you. Free preview in 48 hours, $0 down.",
     images: ["/og-image.jpg"],
   },
   icons: {
     icon: "/icon.svg",
     shortcut: "/icon.svg",
-    apple: "/icon.svg",
+    apple: "/apple-touch-icon.png",
   },
 };
 
@@ -95,7 +96,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body
-        className={`${jakarta.className} min-h-screen bg-[var(--page-bg)] text-[var(--text-primary)] antialiased`}
+        className={`${sans.variable} ${display.variable} min-h-screen bg-paper font-sans text-ink antialiased`}
         suppressHydrationWarning
       >
         <ThemeProvider defaultTheme="light" enableSystem={false}>

@@ -33,20 +33,20 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <section className="mx-auto max-w-3xl px-5 pb-24 pt-20 sm:px-8 sm:pt-24">
-      <p className="text-[10px] font-bold uppercase tracking-[.2em] text-violet-600 dark:text-violet-400">Privacy</p>
-      <h1 className="mt-3 text-4xl font-semibold tracking-[-.06em] text-slate-950 dark:text-white">Your information stays yours.</h1>
-      <p className="mt-4 text-sm leading-7 text-slate-600 dark:text-slate-400">This page explains what NexaFlow collects when you contact us or request a free preview, and how we use it.</p>
+      
+      <h1 className="mt-3 text-4xl font-semibold tracking-[-.06em] text-ink">Your information stays yours.</h1>
+      <p className="mt-4 text-sm leading-7 text-ink-soft">This page explains what NexaFlow collects when you contact us or request a free preview, and how we use it.</p>
       <div className="mt-10 space-y-8">
         {sections.map((section) => (
           <div key={section.heading}>
-            <h2 className="text-lg font-semibold tracking-[-.03em] text-slate-950 dark:text-white">{section.heading}</h2>
-            <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">{section.body}</p>
+            <h2 className="text-lg font-semibold tracking-[-.03em] text-ink">{section.heading}</h2>
+            <p className="mt-2 text-sm leading-7 text-ink-soft">{section.body}</p>
           </div>
         ))}
         <div>
-          <h2 className="text-lg font-semibold tracking-[-.03em] text-slate-950 dark:text-white">Contact</h2>
-          <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-400">
-            Email <a className="font-medium text-violet-700 underline underline-offset-2 dark:text-violet-300" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> or message us on WhatsApp at {WHATSAPP_DISPLAY_NUMBER}.
+          <h2 className="text-lg font-semibold tracking-[-.03em] text-ink">Contact</h2>
+          <p className="mt-2 text-sm leading-7 text-ink-soft">
+            Email <a className="font-medium text-violet-700 underline underline-offset-2 dark:text-brass" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> or message us on WhatsApp at {WHATSAPP_DISPLAY_NUMBER}.
           </p>
         </div>
       </div>
