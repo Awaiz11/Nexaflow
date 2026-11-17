@@ -4,6 +4,7 @@ import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, CalendarDays, Check, MessageCircle, Send, Sparkles, X } from "lucide-react";
 import { useState } from "react";
+import { getWhatsAppUrl } from "@/lib/constants";
 
 type ChatMessage = { from: "visitor" | "concierge"; text: string; kind?: "route" };
 
@@ -22,7 +23,8 @@ export function FloatingConcierge() {
     event.preventDefault();
     const message = input.trim();
     if (!message) return;
-    addMessage(message, "Got it. A NexaFlow specialist will follow up shortly — or request your free preview to get started.");
+    window.open(getWhatsAppUrl(`Hi NexaFlow team, ${message}`), "_blank", "noopener,noreferrer");
+    addMessage(message, "Thanks! We’ve opened WhatsApp with your message — just tap send and our team will reply there.");
     setInput("");
   };
 
