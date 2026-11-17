@@ -4,30 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, MotionConfig } from "framer-motion";
 import { ArrowUpRight, Check, MessageCircle } from "lucide-react";
+import { HeroShowcase } from "@/components/HeroShowcase";
 import { getWhatsAppUrl, DEFAULT_PREVIEW_MESSAGE } from "@/lib/constants";
 
 const ease = [0.16, 1, 0.3, 1] as const;
-
-const heroSites = [
-  {
-    name: "Bloom & Bark",
-    host: "bloom-bark.vercel.app",
-    url: "https://bloom-bark.vercel.app",
-    image: "/bloom-bark.png.jpg",
-  },
-  {
-    name: "Le Rocher",
-    host: "le-rocher.vercel.app",
-    url: "https://le-rocher.vercel.app",
-    image: "/le-rocher.png.jpg",
-  },
-  {
-    name: "Corehaus",
-    host: "premium-corehaus-landing-page.vercel.app",
-    url: "https://premium-corehaus-landing-page.vercel.app/",
-    image: "/corehaus.png.jpg",
-  },
-];
 
 const recentWork = [
   {
@@ -82,65 +62,62 @@ const steps = [
 
 const previewUrl = getWhatsAppUrl(DEFAULT_PREVIEW_MESSAGE);
 
-function BrowserFrame({ host, image, name, priority }: { host: string; image: string; name: string; priority?: boolean }) {
-  return (
-    <div className="overflow-hidden rounded-xl border border-line bg-[var(--surface)] shadow-[0_24px_60px_-20px_rgba(28,33,29,0.35)] dark:shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7)]">
-      <div className="flex items-center gap-3 border-b border-line bg-paper-deep px-3 py-2">
-        <span className="flex gap-1.5" aria-hidden="true">
-          <span className="h-2 w-2 rounded-full bg-line" />
-          <span className="h-2 w-2 rounded-full bg-line" />
-          <span className="h-2 w-2 rounded-full bg-line" />
-        </span>
-        <span className="truncate text-[11px] text-muted">{host}</span>
-      </div>
-      <div className="relative aspect-[16/10]">
-        <Image src={image} alt={`${name} website`} fill priority={priority} sizes="(max-width: 1024px) 90vw, 560px" className="object-cover object-top" />
-      </div>
-    </div>
-  );
-}
+const headline = "When someone nearby looks you up, give them a reason to book.";
+const headlineWords = headline.split(" ");
 
 export default function HomePage() {
   return (
     <MotionConfig reducedMotion="user">
       {/* Hero */}
       <section className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-16 sm:px-8 sm:pt-20 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12 lg:pb-32 lg:pt-24">
-        <motion.div
-          initial="hidden"
-          animate="visible"
-          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.08 } } }}
-          className="max-w-xl"
-        >
-          <motion.h1
-            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } }}
-            className="text-[clamp(2.7rem,5.2vw,4.6rem)] leading-[1.03] text-ink"
-          >
-            When someone nearby looks you up, give them a reason to book.
-          </motion.h1>
+        <div className="max-w-xl">
+          <h1 aria-label={headline} className="text-[clamp(2.7rem,5.2vw,4.6rem)] leading-[1.03] text-ink">
+            {headlineWords.map((word, index) => (
+              <span key={index}>
+                <span aria-hidden="true" className="-mb-[0.14em] inline-block overflow-hidden pb-[0.14em] align-top">
+                  <motion.span
+                    className="inline-block"
+                    initial={{ y: "108%" }}
+                    animate={{ y: 0 }}
+                    transition={{ duration: 0.95, delay: 0.08 + index * 0.045, ease }}
+                  >
+                    {word}
+                  </motion.span>
+                </span>
+                {index < headlineWords.length - 1 ? " " : null}
+              </span>
+            ))}
+          </h1>
           <motion.p
-            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } }}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.65, ease }}
             className="mt-7 max-w-lg text-lg leading-8 text-ink-soft"
           >
             NexaFlow designs, launches and looks after websites for restaurants, salons, studios and shops. See a free preview of yours in 48 hours, then decide.
           </motion.p>
           <motion.div
-            variants={{ hidden: { opacity: 0, y: 16 }, visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease } } }}
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.78, ease }}
             className="mt-9 flex flex-col gap-4 sm:flex-row sm:items-center"
           >
             <a
               href={previewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-brand px-6 py-3.5 text-[15px] font-medium text-brand-ink transition-opacity hover:opacity-90"
+              className="group inline-flex items-center justify-center gap-2.5 rounded-full bg-brand px-6 py-3.5 text-[15px] font-medium text-brand-ink transition-[opacity,transform] duration-300 hover:-translate-y-0.5 hover:opacity-90"
             >
-              <MessageCircle size={18} aria-hidden="true" /> Get my free preview
+              <MessageCircle size={18} aria-hidden="true" className="transition-transform duration-300 group-hover:-rotate-12" /> Get my free preview
             </a>
             <a href="#work" className="inline-flex items-center justify-center px-2 py-3 text-[15px] font-medium text-ink underline decoration-line decoration-2 underline-offset-[6px] transition-colors hover:decoration-brand">
               See recent work
             </a>
           </motion.div>
           <motion.ul
-            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.7, ease } } }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.95, ease }}
             className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-sm text-muted"
           >
             {["$0 down to launch", "You own your website", "Cancel anytime"].map((item) => (
@@ -149,38 +126,10 @@ export default function HomePage() {
               </li>
             ))}
           </motion.ul>
-        </motion.div>
-
-        {/* The work itself: three live client sites, stacked like storefronts on a street */}
-        <div className="relative mx-auto w-full max-w-[600px] sm:pb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.25, ease }}
-            className="absolute right-0 top-0 hidden w-[62%] sm:block"
-          >
-            <BrowserFrame host={heroSites[1].host} image={heroSites[1].image} name={heroSites[1].name} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.4, ease }}
-            className="absolute bottom-0 left-0 hidden w-[56%] sm:block"
-          >
-            <BrowserFrame host={heroSites[2].host} image={heroSites[2].image} name={heroSites[2].name} />
-          </motion.div>
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.1, ease }}
-            className="relative z-10 sm:ml-[9%] sm:mt-[18%] sm:w-[78%]"
-          >
-            <BrowserFrame host={heroSites[0].host} image={heroSites[0].image} name={heroSites[0].name} priority />
-          </motion.div>
-          <p className="mt-4 text-sm leading-6 text-muted sm:absolute sm:bottom-3 sm:right-0 sm:mt-0 sm:max-w-[40%] sm:text-right">
-            <a href={heroSites[0].url} target="_blank" rel="noopener noreferrer" className="font-medium text-ink hover:text-brand">{heroSites[0].name}</a>, a florist in Maplewood. One of eight sites built by NexaFlow.
-          </p>
         </div>
+
+        {/* The work itself: live client sites, stacked like storefronts on a street */}
+        <HeroShowcase />
       </section>
 
       {/* What the site does for the business */}
@@ -188,11 +137,18 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
           <h2 className="max-w-2xl text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink">Built around how people actually choose a local business.</h2>
           <div className="mt-14 grid gap-12 md:grid-cols-3 md:gap-10">
-            {benefits.map((item) => (
-              <div key={item.title} className="border-t-2 border-ink pt-6">
-                <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
-                <p className="mt-3 text-[15px] leading-7 text-ink-soft">{item.body}</p>
-              </div>
+            {benefits.map((item, index) => (
+              <motion.div key={item.title} className="relative pt-6" initial="hidden" whileInView="shown" viewport={{ once: true, margin: "-80px" }}>
+                <motion.span
+                  aria-hidden="true"
+                  className="absolute left-0 top-0 h-[2px] w-full origin-left bg-ink"
+                  variants={{ hidden: { scaleX: 0 }, shown: { scaleX: 1, transition: { duration: 1.1, delay: index * 0.12, ease } } }}
+                />
+                <motion.div variants={{ hidden: { opacity: 0, y: 14 }, shown: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.3 + index * 0.12, ease } } }}>
+                  <h3 className="text-lg font-semibold text-ink">{item.title}</h3>
+                  <p className="mt-3 text-[15px] leading-7 text-ink-soft">{item.body}</p>
+                </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -207,19 +163,29 @@ export default function HomePage() {
           </Link>
         </div>
         <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-3">
-          {recentWork.map((site) => (
-            <a key={site.name} href={site.url} target="_blank" rel="noopener noreferrer" className="group block">
+          {recentWork.map((site, index) => (
+            <motion.a
+              key={site.name}
+              href={site.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block"
+              initial={{ opacity: 0, y: 28 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.9, delay: index * 0.1, ease }}
+            >
               <div className="relative aspect-[16/10] overflow-hidden rounded-lg border border-line bg-paper-deep">
-                <Image src={site.image} alt={`${site.name} website`} fill sizes="(max-width: 768px) 90vw, 400px" className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" />
+                <Image src={site.image} alt={`${site.name} website`} fill sizes="(max-width: 768px) 90vw, 400px" className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]" />
               </div>
               <div className="mt-4 flex items-start justify-between gap-4">
                 <div>
                   <h3 className="text-lg font-semibold text-ink">{site.name}</h3>
                   <p className="mt-1 text-sm text-muted">{site.kind}</p>
                 </div>
-                <ArrowUpRight size={18} className="mt-1 shrink-0 text-muted transition-colors group-hover:text-brand" aria-label="Opens live site" />
+                <ArrowUpRight size={18} className="mt-1 shrink-0 text-muted transition-[color,transform] duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brand" aria-label="Opens live site" />
               </div>
-            </a>
+            </motion.a>
           ))}
         </div>
       </section>
@@ -233,11 +199,17 @@ export default function HomePage() {
           </div>
           <ol className="grid gap-10 sm:grid-cols-3 sm:gap-8">
             {steps.map((step, index) => (
-              <li key={step.title}>
+              <motion.li
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.8, delay: index * 0.15, ease }}
+              >
                 <span className="font-display text-5xl leading-none text-brand dark:text-brass">{index + 1}</span>
                 <h3 className="mt-5 text-lg font-semibold text-ink">{step.title}</h3>
                 <p className="mt-3 text-[15px] leading-7 text-ink-soft">{step.body}</p>
-              </li>
+              </motion.li>
             ))}
           </ol>
         </div>
