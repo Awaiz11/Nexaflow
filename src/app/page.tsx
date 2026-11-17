@@ -199,17 +199,17 @@ export default function HomePage() {
             {steps.map((step, index) => (
               <motion.li
                 key={step.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.8, delay: index * 0.15, ease }}
+                initial="hidden"
+                whileInView="shown"
+                viewport={{ once: true, amount: 0.3 }}
+                variants={{ hidden: { opacity: 0, y: 40 }, shown: { opacity: 1, y: 0, transition: { duration: 0.8, delay: index * 0.15, ease } } }}
               >
                 <motion.span
                   className="inline-block font-display text-5xl leading-none text-brand dark:text-brass"
-                  initial={{ scale: 0.4, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true, margin: "-60px" }}
-                  transition={{ type: "spring", stiffness: 260, damping: 16, delay: 0.15 + index * 0.15 }}
+                  variants={{
+                    hidden: { scale: 0.4, opacity: 0 },
+                    shown: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 260, damping: 16, delay: 0.15 + index * 0.15 } },
+                  }}
                 >
                   {index + 1}
                 </motion.span>
