@@ -145,7 +145,7 @@ export default function HomePage() {
           >
             {["$0 down to launch", "You own your website", "Cancel anytime"].map((item) => (
               <li key={item} className="inline-flex items-center gap-2">
-                <Check size={15} className="text-brand" aria-hidden="true" /> {item}
+                <Check size={15} className="text-brand dark:text-brass" aria-hidden="true" /> {item}
               </li>
             ))}
           </motion.ul>
@@ -234,7 +234,7 @@ export default function HomePage() {
           <ol className="grid gap-10 sm:grid-cols-3 sm:gap-8">
             {steps.map((step, index) => (
               <li key={step.title}>
-                <span className="font-display text-5xl leading-none text-brand">{index + 1}</span>
+                <span className="font-display text-5xl leading-none text-brand dark:text-brass">{index + 1}</span>
                 <h3 className="mt-5 text-lg font-semibold text-ink">{step.title}</h3>
                 <p className="mt-3 text-[15px] leading-7 text-ink-soft">{step.body}</p>
               </li>
@@ -245,7 +245,7 @@ export default function HomePage() {
 
       {/* Closing call to action */}
       <section className="mx-auto max-w-7xl px-5 pb-10 sm:px-8">
-        <div className="rounded-2xl bg-brand px-7 py-14 text-brand-ink sm:px-14 sm:py-20">
+        <div className="rounded-2xl bg-brand px-7 py-14 text-brand-ink sm:px-14 sm:py-20 dark:border dark:border-line dark:bg-[#1d3a2d] dark:text-ink">
           <h2 className="max-w-2xl text-[clamp(2.1rem,4vw,3.4rem)] leading-[1.05]">See your new website before you pay anything.</h2>
           <p className="mt-5 max-w-xl text-[17px] leading-8 opacity-85">
             Send us your business name on WhatsApp and we’ll send back a preview within 48 hours. Plans start at $49 a month, hosting and updates included.
@@ -255,7 +255,7 @@ export default function HomePage() {
               href={previewUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-ink px-6 py-3.5 text-[15px] font-medium text-brand transition-opacity hover:opacity-90"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-brand-ink px-6 py-3.5 text-[15px] font-medium text-brand transition-opacity hover:opacity-90 dark:bg-brand dark:text-brand-ink"
             >
               <MessageCircle size={18} aria-hidden="true" /> Get my free preview
             </a>
