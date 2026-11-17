@@ -1,60 +1,126 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* ─── Color Tokens ─────────────────────────────────────── */
+/* ─── Brand palette ─────────────────────────────────────
+   Warm paper, ink, bottle green. Tailwind's violet/indigo/purple scales are
+   remapped to the green scale so every existing accent picks up the brand. */
+@theme {
+  --color-violet-50: #eef4f0;
+  --color-violet-100: #d8e7dd;
+  --color-violet-200: #b6d1c0;
+  --color-violet-300: #8bb59c;
+  --color-violet-400: #5e9679;
+  --color-violet-500: #3d7b5f;
+  --color-violet-600: #2b634a;
+  --color-violet-700: #1f4d3b;
+  --color-violet-800: #193e30;
+  --color-violet-900: #143126;
+  --color-violet-950: #0b1d16;
+  --color-indigo-50: #eef4f0;
+  --color-indigo-100: #d8e7dd;
+  --color-indigo-200: #b6d1c0;
+  --color-indigo-300: #8bb59c;
+  --color-indigo-400: #5e9679;
+  --color-indigo-500: #3d7b5f;
+  --color-indigo-600: #2b634a;
+  --color-indigo-700: #1f4d3b;
+  --color-indigo-800: #193e30;
+  --color-indigo-900: #143126;
+  --color-indigo-950: #0b1d16;
+  --color-purple-50: #eef4f0;
+  --color-purple-100: #d8e7dd;
+  --color-purple-200: #b6d1c0;
+  --color-purple-300: #8bb59c;
+  --color-purple-400: #5e9679;
+  --color-purple-500: #3d7b5f;
+  --color-purple-600: #2b634a;
+  --color-purple-700: #1f4d3b;
+  --color-purple-800: #193e30;
+  --color-purple-900: #143126;
+  --color-purple-950: #0b1d16;
+}
+
+@theme inline {
+  --font-sans: var(--nf-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--nf-display), Georgia, "Times New Roman", serif;
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-brand: var(--brand);
+  --color-brand-ink: var(--brand-ink);
+  --color-brass: var(--brass);
+}
+
 :root {
   color-scheme: light;
-  --page-bg: #FAFAFF;
-  --surface: #ffffff;
-  --surface-raised: #f1f0ff;
-  --text-primary: #0A0A0A;
-  --text-body: #4a4a6a;
-  --text-muted: #7c7c9a;
-  --line: rgba(109, 40, 217, 0.12);
-  --indigo: #4f46e5;
-  --violet: #7c3aed;
-  --shadow-soft: 0 24px 70px rgba(109, 40, 217, 0.08);
+  --paper: #f7f4ee;
+  --paper-deep: #efeae0;
+  --ink: #1c211d;
+  --ink-soft: #3d443e;
+  --muted: #6b6f68;
+  --line: #e2dccf;
+  --brand: #1f4d3b;
+  --brand-ink: #f7f4ee;
+  --brass: #a8813f;
+  /* legacy tokens still referenced by some components */
+  --page-bg: var(--paper);
+  --surface: #fffdf9;
+  --surface-raised: var(--paper-deep);
+  --text-primary: var(--ink);
+  --text-body: var(--ink-soft);
+  --text-muted: var(--muted);
+  --indigo: var(--brand);
+  --violet: var(--brand);
+  --shadow-soft: 0 18px 50px rgba(28, 33, 29, 0.08);
 }
 
 html.dark {
   color-scheme: dark;
-  --page-bg: #06060F;
-  --surface: #0B091B;
-  --surface-raised: #100D24;
-  --text-primary: #FFFFFF;
-  --text-body: #9494b8;
-  --text-muted: #6464a0;
-  --line: rgba(139, 92, 246, 0.18);
-  --indigo: #818cf8;
-  --violet: #a78bfa;
-  --shadow-soft: 0 24px 70px rgba(0, 0, 0, 0.45);
+  --paper: #141713;
+  --paper-deep: #1b1f1a;
+  --ink: #efebe2;
+  --ink-soft: #c9c6bc;
+  --muted: #9a9b92;
+  --line: #2b302a;
+  --brand: #8fc3a6;
+  --brand-ink: #10140f;
+  --brass: #d1ad6b;
+  --page-bg: var(--paper);
+  --surface: #1b1f1a;
+  --surface-raised: #222721;
+  --text-primary: var(--ink);
+  --text-body: var(--ink-soft);
+  --text-muted: var(--muted);
+  --indigo: var(--brand);
+  --violet: var(--brand);
+  --shadow-soft: 0 18px 50px rgba(0, 0, 0, 0.4);
 }
 
 /* ─── Base Reset ────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
 
-/* LIGHT MODE: Icy white base with a soft pastel purple/lavender dome at the bottom */
 body {
   min-height: 100vh;
   margin: 0;
-  background-color: #FAFAFF;
-  color: #0A0A0A;
-  background-image: radial-gradient(ellipse at 50% 120%, rgba(216, 180, 254, 0.45) 0%, rgba(243, 232, 255, 0.2) 40%, transparent 70%);
-  background-attachment: fixed;
+  background-color: var(--paper);
+  color: var(--ink);
 }
 
-/* DARK MODE: Deep midnight blue/black base with subtle violet accents */
-.dark body {
-  background-color: #06060F; /* Deep midnight base */
-  color: #FFFFFF;
-  background-image: 
-    radial-gradient(ellipse at 50% 0%, rgba(109, 40, 217, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse at 50% 120%, rgba(124, 58, 237, 0.25) 0%, rgba(76, 29, 149, 0.1) 40%, transparent 70%);
-  background-attachment: fixed;
+/* Display type: unlayered so it wins over utility letter-spacing on headings */
+h1, h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: -0.018em;
+  font-optical-sizing: auto;
 }
 
-::selection { background: rgba(124, 58, 237, 0.18); color: inherit; }
+:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }
+
+::selection { background: rgba(31, 77, 59, 0.18); color: inherit; }
 a { text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 button { cursor: pointer; }
@@ -88,11 +154,11 @@ nextjs-portal {
   z-index: 0;
   pointer-events: none;
   opacity: 0;
-  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(109, 40, 217, 0.1), transparent 68%);
+  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(31, 77, 59, 0.06), transparent 68%);
   transition: opacity 400ms ease;
 }
 .dark .spotlight-card::before {
-  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(139, 92, 246, 0.12), transparent 68%);
+  background: radial-gradient(340px circle at var(--spot-x) var(--spot-y), rgba(143, 195, 166, 0.08), transparent 68%);
 }
 .spotlight-card:hover::before { opacity: 1; }
 .spotlight-card > * { position: relative; z-index: 1; }

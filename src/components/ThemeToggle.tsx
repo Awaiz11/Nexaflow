@@ -13,11 +13,11 @@ export function ThemeToggle() {
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
       aria-pressed={theme === "dark"}
       onClick={(e) => toggleTheme(e.clientX, e.clientY)}
-      className="theme-toggle group relative inline-flex h-10 w-[76px] shrink-0 items-center rounded-full border border-violet-200/60 bg-white/80 p-1 backdrop-blur-md hover:border-violet-400/50 dark:border-white/10 dark:bg-white/5 dark:hover:border-white/20"
+      className="theme-toggle group relative inline-flex h-10 w-[76px] shrink-0 items-center rounded-full border border-line bg-transparent p-1 hover:border-ink-soft"
     >
       <motion.span
         aria-hidden="true"
-        className="absolute left-1 top-1 grid h-8 w-8 place-items-center rounded-full bg-[#09091B] text-white shadow-md shadow-black/20 dark:bg-white dark:text-[#09091B] dark:shadow-white/10"
+        className="absolute left-1 top-1 grid h-8 w-8 place-items-center rounded-full bg-ink text-paper"
         animate={{ x: theme === "dark" ? 0 : 36 }}
         transition={{ type: "spring", stiffness: 420, damping: 28 }}
       >
@@ -33,10 +33,10 @@ export function ThemeToggle() {
           </motion.span>
         </AnimatePresence>
       </motion.span>
-      <span aria-hidden="true" className="pointer-events-none absolute left-[10px] top-1/2 -translate-y-1/2 text-violet-300 dark:text-white/20">
+      <span aria-hidden="true" className="pointer-events-none absolute left-[10px] top-1/2 -translate-y-1/2 text-muted">
         <Moon size={13} />
       </span>
-      <span aria-hidden="true" className="pointer-events-none absolute right-[10px] top-1/2 -translate-y-1/2 text-violet-300 dark:text-white/20">
+      <span aria-hidden="true" className="pointer-events-none absolute right-[10px] top-1/2 -translate-y-1/2 text-muted">
         <Sun size={13} />
       </span>
     </button>
