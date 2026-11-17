@@ -141,7 +141,7 @@ export default function HomePage() {
               whileHover={{ scale: 1.02, y: -1 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.2 }}
-              className="group inline-flex items-center justify-center gap-2 bg-white text-black px-6 py-3 rounded-full font-medium transition-colors hover:bg-gray-200"
+              className="group inline-flex items-center justify-center gap-2 rounded-full bg-[#09091B] px-6 py-3 font-medium text-white shadow-md transition-colors hover:bg-[#181832] dark:bg-white dark:text-black dark:hover:bg-gray-200"
             >
               Get your free 48-hour preview <ArrowUpRight size={18} className="transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </motion.a>
@@ -255,7 +255,7 @@ export default function HomePage() {
           </motion.div>
 
           {/* Floating notification chip */}
-          <div className="soft-float absolute -left-3 top-[31%] hidden rounded-2xl border border-violet-200/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-violet-900/10 backdrop-blur-xl sm:block dark:border-violet-500/20 dark:bg-[#0F0C24]/95">
+          <div className="soft-float absolute -bottom-16 -left-8 hidden rounded-2xl border border-violet-200/70 bg-white/95 px-3.5 py-3 shadow-xl shadow-violet-900/10 backdrop-blur-xl sm:block dark:border-violet-500/20 dark:bg-[#0F0C24]/95">
             <div className="flex items-center gap-2.5">
               <span className="grid h-8 w-8 place-items-center rounded-xl bg-violet-500/10 text-violet-600 dark:text-violet-300"><MessageCircle size={15} /></span>
               <div>
