@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
   title: "Themes & live demos",
-  description: "Explore responsive, booking-ready website directions for hospitality, services, wellness and finance businesses.",
+  description: "Explore responsive, booking-ready website directions for hospitality, salons, wellness, retail and creative businesses.",
   alternates: { canonical: "/themes" },
 };
 
