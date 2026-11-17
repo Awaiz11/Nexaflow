@@ -373,7 +373,7 @@ export default function HomePage() {
               descriptor: "Cocktail bar & fine dining",
               category: "Hospitality & Dining",
               url: "https://le-rocher.vercel.app",
-              image: "/le-rocher.png",
+              image: "/le-rocher.png.jpg",
               tags: ["Menu design", "Reservations"],
             },
             {
@@ -382,7 +382,7 @@ export default function HomePage() {
               descriptor: "Neighbourhood flower studio & bouquet reservations",
               category: "Retail & Local",
               url: "https://bloom-bark.vercel.app",
-              image: "/bloom-bark.png",
+              image: "/bloom-bark.png.jpg",
               tags: ["Online reservations", "Local delivery"],
             },
             {
