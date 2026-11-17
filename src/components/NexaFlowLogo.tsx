@@ -22,7 +22,7 @@ export function NexaFlowLogo({
       >
         <Image
           src="/icon-512.png"
-          alt="NexaFlow NF Emblem"
+          alt=""
           width={size * 2}
           height={size * 2}
           priority
