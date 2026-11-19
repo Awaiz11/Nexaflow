@@ -12,6 +12,12 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const recentWork = [
   {
+    name: "Jharoka",
+    kind: "Specialty café, Gulberg Lahore",
+    url: "https://jharoka-cafe.vercel.app/",
+    image: "/jharoka-shot.jpg",
+  },
+  {
     name: "Luxe Haven",
     kind: "Hair salon & spa, Beverly Hills",
     url: "https://salon-code-xg6g.vercel.app/",
@@ -22,12 +28,6 @@ const recentWork = [
     kind: "Pizzeria with online ordering",
     url: "https://chicago-s.vercel.app/",
     image: "/chicago-shot.jpg",
-  },
-  {
-    name: "Sira Bar",
-    kind: "Cocktail lounge",
-    url: "https://premium-sira-bar-landing-page.vercel.app/",
-    image: "/sira-bar.png.jpg",
   },
 ];
 
