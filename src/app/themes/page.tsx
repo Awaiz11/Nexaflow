@@ -43,6 +43,21 @@ const categories: Category[] = [
 
 const demos: Demo[] = [
   {
+    name: "Phulkari",
+    title: "Phulkari",
+    descriptor: "Punjabi restaurant, Lahore",
+    description: "Punjabi restaurant, Lahore",
+    category: "Hospitality & Dining",
+    url: "https://phulkari-restaurant.vercel.app/",
+    liveLink: "https://phulkari-restaurant.vercel.app/",
+    tags: ["Half / full kg prices", "Family platters", "WhatsApp bookings"],
+    features: ["Half / full kg prices", "Family platters", "WhatsApp bookings"],
+    key: "phulkari",
+    theme: "Restaurant",
+    image: "/phulkari-shot.jpg",
+    src: "/phulkari-shot.jpg",
+  },
+  {
     name: "Jharoka",
     title: "Jharoka",
     descriptor: "Specialty café, Lahore",
