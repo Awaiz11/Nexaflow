@@ -18,10 +18,10 @@ const recentWork = [
     image: "/jharoka-shot.jpg",
   },
   {
-    name: "Luxe Haven",
-    kind: "Hair salon & spa, Beverly Hills",
-    url: "https://salon-code-xg6g.vercel.app/",
-    image: "/luxe-haven-shot.jpg",
+    name: "Phulkari",
+    kind: "Punjabi restaurant, DHA Lahore",
+    url: "https://phulkari-restaurant.vercel.app/",
+    image: "/phulkari-shot.jpg",
   },
   {
     name: "Chicago's Pizza Factory",
