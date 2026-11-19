@@ -43,6 +43,21 @@ const categories: Category[] = [
 
 const demos: Demo[] = [
   {
+    name: "Harkat",
+    title: "Harkat",
+    descriptor: "Physiotherapy clinic, Lahore",
+    description: "Physiotherapy clinic, Lahore",
+    category: "Wellness & Clinics",
+    url: "https://harkat-physio.vercel.app/",
+    liveLink: "https://harkat-physio.vercel.app/",
+    tags: ["Conditions explained", "Home visits", "WhatsApp bookings"],
+    features: ["Conditions explained", "Home visits", "WhatsApp bookings"],
+    key: "harkat",
+    theme: "Clinic",
+    image: "/harkat-shot.jpg",
+    src: "/harkat-shot.jpg",
+  },
+  {
     name: "Phulkari",
     title: "Phulkari",
     descriptor: "Punjabi restaurant, Lahore",
