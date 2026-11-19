@@ -43,6 +43,21 @@ const categories: Category[] = [
 
 const demos: Demo[] = [
   {
+    name: "Jharoka",
+    title: "Jharoka",
+    descriptor: "Specialty café, Lahore",
+    description: "Specialty café, Lahore",
+    category: "Hospitality & Dining",
+    url: "https://jharoka-cafe.vercel.app/",
+    liveLink: "https://jharoka-cafe.vercel.app/",
+    tags: ["Menu in rupees", "WhatsApp bookings", "Urdu touches"],
+    features: ["Menu in rupees", "WhatsApp bookings", "Urdu touches"],
+    key: "jharoka",
+    theme: "Café",
+    image: "/jharoka-shot.jpg",
+    src: "/jharoka-shot.jpg",
+  },
+  {
     name: "Le Rocher",
     title: "Le Rocher",
     descriptor: "Cocktail bar & fine dining",
