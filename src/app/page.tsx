@@ -24,10 +24,10 @@ const recentWork = [
     image: "/phulkari-shot.jpg",
   },
   {
-    name: "Chicago's Pizza Factory",
-    kind: "Pizzeria with online ordering",
-    url: "https://chicago-s.vercel.app/",
-    image: "/chicago-shot.jpg",
+    name: "Harkat",
+    kind: "Physiotherapy clinic, Johar Town",
+    url: "https://harkat-physio.vercel.app/",
+    image: "/harkat-shot.jpg",
   },
 ];
 
