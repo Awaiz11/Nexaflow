@@ -12,12 +12,6 @@ const ease = [0.16, 1, 0.3, 1] as const;
 
 const recentWork = [
   {
-    name: "Phulkari",
-    kind: "Punjabi restaurant, DHA Lahore",
-    url: "https://phulkari-restaurant.vercel.app/",
-    image: "/phulkari-shot.jpg",
-  },
-  {
     name: "Harkat",
     kind: "Physiotherapy clinic, Johar Town",
     url: "https://harkat-physio.vercel.app/",
@@ -28,6 +22,12 @@ const recentWork = [
     kind: "Barbershop, DHA Lahore",
     url: "https://hajjam-barbers.vercel.app/",
     image: "/hajjam-shot.jpg",
+  },
+  {
+    name: "Singhaar",
+    kind: "Beauty salon, Model Town",
+    url: "https://singhaar-salon.vercel.app/",
+    image: "/singhaar-shot.jpg",
   },
 ];
 
