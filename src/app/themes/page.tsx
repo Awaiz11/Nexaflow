@@ -43,6 +43,21 @@ const categories: Category[] = [
 
 const demos: Demo[] = [
   {
+    name: "Hajjam",
+    title: "Hajjam",
+    descriptor: "Barbershop, DHA Lahore",
+    description: "Barbershop, DHA Lahore",
+    category: "Salons & Services",
+    url: "https://hajjam-barbers.vercel.app/",
+    liveLink: "https://hajjam-barbers.vercel.app/",
+    tags: ["Price board", "Slot booking", "Dulha package"],
+    features: ["Price board", "Slot booking", "Dulha package"],
+    key: "hajjam",
+    theme: "Barbershop",
+    image: "/hajjam-shot.jpg",
+    src: "/hajjam-shot.jpg",
+  },
+  {
     name: "Harkat",
     title: "Harkat",
     descriptor: "Physiotherapy clinic, Lahore",
