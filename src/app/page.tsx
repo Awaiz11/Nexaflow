@@ -143,7 +143,7 @@ export default function HomePage() {
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
           <WordReveal onScroll text="Recent work" className="text-[clamp(2rem,3.6vw,3rem)] leading-[1.08] text-ink" />
           <Link href="/themes" className="text-[15px] font-medium text-ink underline decoration-line decoration-2 underline-offset-[6px] hover:decoration-brand">
-            Browse all eight sites
+            Browse all sites
           </Link>
         </div>
         <div className="mt-12 grid gap-x-8 gap-y-14 md:grid-cols-3">
