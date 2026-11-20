@@ -43,6 +43,21 @@ const categories: Category[] = [
 
 const demos: Demo[] = [
   {
+    name: "Singhaar",
+    title: "Singhaar",
+    descriptor: "Beauty salon, Model Town Lahore",
+    description: "Beauty salon, Model Town Lahore",
+    category: "Salons & Services",
+    url: "https://singhaar-salon.vercel.app/",
+    liveLink: "https://singhaar-salon.vercel.app/",
+    tags: ["Bridal packages", "Price menu", "WhatsApp bookings"],
+    features: ["Bridal packages", "Price menu", "WhatsApp bookings"],
+    key: "singhaar",
+    theme: "Salon",
+    image: "/singhaar-shot.jpg",
+    src: "/singhaar-shot.jpg",
+  },
+  {
     name: "Hajjam",
     title: "Hajjam",
     descriptor: "Barbershop, DHA Lahore",
